@@ -26,15 +26,10 @@ const nextConfig = {
     }),
 
 	// Base Path 설정
-	basePath: isProd ? '/new' : '',
+	basePath: isProd ? '/' : '',
 
   // CDN Prefix 설정
   assetPrefix: isProd ? '' : '',
-
-	// 이미지 Domain List
-	images: {
-    domains: [ 'app-cdn.enfit.net' ],
-  },
 
 	// 폰트 최적화 여부
 	optimizeFonts: true,
@@ -61,37 +56,15 @@ const nextConfig = {
   async rewrites() {
 		// 다중 API Server에 따른 프록시 설정
 		const proxy = [
-			// 메인 API 서버
-			{
-				source: '/enfit1/api/:version/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API_SERVER_1}/api/:version/:path*`
-			},
-			// 검색/추천/리뷰 API 서버
-			{
-				source: '/enfit2/api/:version/:path*',
-				destination: `${process.env.NEXT_PUBLIC_API_SERVER_2}/api/:version/:path*`
-			},
 			// Node API 서버
 			{
 				source: '/next/api/:version/:path*',
         destination: '/api/:version/:path*'
 			},
-			// Midibus 서버
-			{
-				source: '/midibus/:path*',
-				destination: 'https://api.midibus.kinxcdn.com/:path*'
-			}
 		];
 
 		// 페이지 리다이렉션 설정
-		const redirection = [
-			// 메인 페이지
-			{
-				source: '/new',
-				destination: process.env.NEXT_PUBLIC_DEFAULT_HOST,
-				basePath: false,
-			},
-		]
+		const redirection = [];
 
     return [
 			...proxy,

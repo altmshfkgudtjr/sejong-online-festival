@@ -1,4 +1,4 @@
-import { useSelector as useSelector_, TypedUseSelectorHook } from 'react-redux';
+import { useSelector as useSelector_ } from 'react-redux';
 
 /**
  * 타입 선언된 Redux useSelector
