@@ -1,0 +1,52 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+
+  "plugins": ["react", "react-hooks"],
+
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2020": true,
+    "node": true,
+    "jest": true
+  },
+
+  "rules": {
+    "no-console": "off",
+    "no-unused-vars": "warn",
+    "no-unreachable": "warn",
+    "strict": ["error", "global"],
+    // Braket({}) 옵션
+    "curly": "warn",
+    // React 17부터 적용 (import React)
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    // 추가 React 관련 규칙
+    "react/prefer-stateless-function": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/prop-types": 0,
+    // Next/EsLint
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
+    // React Hooks 규칙
+    "react-hooks/rules-of-hooks": "error", // Hook 규칙 검사
+    "react-hooks/exhaustive-deps": "warn" // useEffect Dependencies 검사
+  }
+}

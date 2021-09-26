@@ -1,0 +1,18 @@
+# ------------------------------------ Assets ----------------------------------- #
+tsconfig.json
+public/*
+src/lib/icons/SpriteIcons.js
+
+# ------------------------------------- Next ------------------------------------ #
+next.config.js
+next.export.config.js
+
+# ------------------------------------- META ------------------------------------ #
+
+# head (SEO, Analytics, ...)
+src/head/info/default.js
+
+# ---------------------------------- Component ---------------------------------- #
+
+# Modal Center
+src/components/organisms/modals/index.js
