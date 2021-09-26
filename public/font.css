@@ -1,0 +1,77 @@
+@font-face {
+	font-family: Noto Sans KR;
+	font-style: normal;
+	font-weight: 100;
+	src: local('Noto Sans Thin'), local('NotoSans-Thin'), local('NotoSans-Thin'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Thin.eot'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Thin.eot#iefix') format('embedded-opentype'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Thin.woff2') format('woff2'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Thin.woff') format('woff');
+	unicode-range: 'U+0020- u+007e, U+1100- u+11f9, U+3000- u+303f, U+3131- u+318e, U+327f- u+327f, U+ac00- u+d7a3, U+ff01- u+ff60';
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Noto Sans KR;
+	font-style: normal;
+	font-weight: 300;
+	src: local('Noto Sans Light'), local('NotoSans-Light'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Light.eot'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Light.eot#iefix') format('embedded-opentype'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Light.woff2') format('woff2'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Light.woff') format('woff');
+	unicode-range: 'U+0020- u+007e, U+1100- u+11f9, U+3000- u+303f, U+3131- u+318e, U+327f- u+327f, U+ac00- u+d7a3, U+ff01- u+ff60';
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Noto Sans KR;
+	font-style: normal;
+	font-weight: 400;
+	src: local('Noto Sans Regular'), local('NotoSans-Regular'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Regular.eot'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Regular.eot#iefix') format('embedded-opentype'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Regular.woff2') format('woff2'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Regular.woff') format('woff');
+	unicode-range: 'U+0020- u+007e, U+1100- u+11f9, U+3000- u+303f, U+3131- u+318e, U+327f- u+327f, U+ac00- u+d7a3, U+ff01- u+ff60';
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Noto Sans KR;
+	font-style: normal;
+	font-weight: 500;
+	src: local('Noto Sans Medium'), local('NotoSans-Medium'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Medium.eot'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Medium.eot#iefix') format('embedded-opentype'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Medium.woff2') format('woff2'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Medium.woff') format('woff');
+	unicode-range: 'U+0020- u+007e, U+1100- u+11f9, U+3000- u+303f, U+3131- u+318e, U+327f- u+327f, U+ac00- u+d7a3, U+ff01- u+ff60';
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Noto Sans KR;
+	font-style: normal;
+	font-weight: 700;
+	src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Bold.eot'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Bold.eot#iefix') format('embedded-opentype'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Bold.woff2') format('woff2'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Bold.woff') format('woff');
+	unicode-range: 'U+0020- u+007e, U+1100- u+11f9, U+3000- u+303f, U+3131- u+318e, U+327f- u+327f, U+ac00- u+d7a3, U+ff01- u+ff60';
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Noto Sans KR;
+	font-style: normal;
+	font-weight: 900;
+	src: local('Noto Sans Black'), local('NotoSans-Black'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Black.eot'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Black.eot#iefix') format('embedded-opentype'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Black.woff2') format('woff2'),
+			 url('https://app-cdn.enfit.net/fonts/NotoSans-Black.woff') format('woff');
+	unicode-range: 'U+0020- u+007e, U+1100- u+11f9, U+3000- u+303f, U+3131- u+318e, U+327f- u+327f, U+ac00- u+d7a3, U+ff01- u+ff60';
+	font-display: swap;
+}
