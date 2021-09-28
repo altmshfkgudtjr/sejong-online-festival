@@ -116,7 +116,7 @@ const GlobalStyles = createGlobalStyle`
 	input[type='text'],
 	textarea {
 		appearance: none;
-		padding: 0;
+		/* padding: 0; */
 	}
 
 	h1,
