@@ -26,7 +26,7 @@ const nextConfig = {
     }),
 
 	// Base Path 설정
-	basePath: isProd ? '/' : '',
+	basePath: isProd ? '' : '',
 
   // CDN Prefix 설정
   assetPrefix: isProd ? '' : '',

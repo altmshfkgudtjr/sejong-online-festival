@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import styled from 'styled-components';
 import dynamic from 'next/dynamic';
 // components
-export const Toast = dynamic(() => import('cds/toast'));
+export const Toast = dynamic(() => import('components/containers/common/toast'));
 // slices
 import { newToast } from 'slices/toast.thunk';
 import { deleteToast } from 'slices/toast';
@@ -10,7 +10,7 @@ import { deleteToast } from 'slices/toast';
 import { useSelector, useDispatch } from 'hooks/common/useStore';
 // styles
 import * as animations from 'lib/styles/animations';
-import { palette, zIndex } from 'cds/styles';
+import { palette, zIndex } from 'lib/styles';
 
 /**
  * Toast Hook
@@ -103,7 +103,7 @@ const ToastBackground = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: ${palette.dim.basic};
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: ${zIndex.toast};
   animation: 0.1s ${animations.fadeIn} ease;
 `;

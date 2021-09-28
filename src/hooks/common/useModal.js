@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useEffect, useCallback } from 'react';
 // components
-import * as modals from 'components/organisms/modals/index';
+import * as modals from 'components/containers/modals/index';
 // slices
 import { pushModal, popModal, deleteModal, clearModal } from 'slices/modal';
 // hooks
@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'hooks/common/useStore';
 import * as domUtils from 'lib/utils/dom';
 // styles
 import * as animations from 'lib/styles/animations';
-import { palette, zIndex } from 'cds/styles';
+import { palette, zIndex } from 'lib/styles';
 /**
  * Modal Hook
  * - Modal이 공유되는 페이지에서 사용하는 훅
@@ -144,7 +144,7 @@ const Background = styled.div`
   bottom: 0;
   left: 0;
   width: 100vw;
-  background-color: ${palette.dim.basic};
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: ${zIndex.modal};
   overflow: hidden;
   animation: ${animations.fadeIn} 0.1s;

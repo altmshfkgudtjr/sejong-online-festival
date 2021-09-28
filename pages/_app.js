@@ -1,18 +1,16 @@
 import Head from 'next/head';
-// Head
-import Polyfill from 'head/Polyfill';
 // Store
 import storeWrapper from 'slices';
 // hooks
 import useToast from 'hooks/common/useToast';
 import useModal from 'hooks/common/useModal';
 // styles
-import 'public/fonts.css';
+import '../public/font.css';
 
 const App = ({ Component, pageProps }) => {
   const { Toast } = useToast();
   const { Modal } = useModal();
-  const isProd = process.env.NODE_ENV === 'production';
+  const isProd = process.env.NODE_ENV === 'prod`uction';
 
   const getLayout = Component.getLayout || (page => page);
 
@@ -25,7 +23,6 @@ const App = ({ Component, pageProps }) => {
           content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes, minimal-ui, viewport-fit=cover"
         />
       </Head>
-      <Polyfill />
       {/* ---------------------------------------- Main --------------------------------------- */}
       {getLayout(<Component {...pageProps} />)}
       <Modal />
