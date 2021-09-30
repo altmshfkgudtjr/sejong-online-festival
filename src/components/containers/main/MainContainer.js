@@ -23,7 +23,6 @@ const TopContainer = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden;
 `;
 
 const HeaderContainer = styled.header`
