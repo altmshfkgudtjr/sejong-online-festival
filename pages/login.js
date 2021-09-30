@@ -1,4 +1,4 @@
-import Login from 'components/presenters/login/Login';
+import LoginContainer from 'components/containers/login/LoginContainer';
 import Link from 'next/link';
 
 export default function LoginPage() {
@@ -9,6 +9,6 @@ export default function LoginPage() {
     //     <a>메인으로</a>
     //   </Link>
     // </div>
-    <Login />
+    <LoginContainer />
   );
 }
