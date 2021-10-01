@@ -8,6 +8,7 @@ import Esports from 'components/containers/main/Esports';
 import IntroInfo from 'components/presenters/main/IntroInfo';
 import Banner from 'components/presenters/common/Banner';
 import Footer from 'components/presenters/common/Footer';
+import Exhibition from 'components/containers/main/Exhibition';
 
 const MainPage = () => {
   return (
@@ -36,7 +37,9 @@ const MainPage = () => {
         <Esports />
       </div>
 
-      <div id="exhibition">{/* <Exihibition /> */}</div>
+      <div id="exhibition">
+        <Exhibition />
+      </div>
 
       <div id="contact">
         <Footer />

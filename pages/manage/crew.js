@@ -14,7 +14,6 @@ const ManageCrewPage = () => {
       <MainLayout>
         <Apply />
       </MainLayout>
-      <Exhibition />
     </>
   );
 };

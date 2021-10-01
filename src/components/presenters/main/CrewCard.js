@@ -1,13 +1,16 @@
 import styled from 'styled-components';
+import { palette } from 'lib/styles';
+// containers
+import Chip from 'components/containers/common/Chip';
 
-const CrewCard = () => {
+const CrewCard = ({ crew }) => {
   return (
     <Wrapper>
-      <CrewName>{time}</CrewName>
+      <Name>{crew.name}</Name>
       <Layout>
-        <ChipLayout onClick={onClick}>
-          <Image url={photo} />
-          <Chip message={message}>Gallery</Chip>
+        <Image src={crew.url} />
+        <ChipLayout>
+          <Chip message={crew.type} />
         </ChipLayout>
       </Layout>
     </Wrapper>
@@ -23,8 +26,6 @@ const Layout = styled.div`
   flex: 1 1 auto;
   width: auto;
   min-width: 300px;
-  height: 0;
-  padding-bottom: 400px;
   margin-bottom: 24px;
   border-radius: 16px;
   background-color: ${palette.background.bg2};
@@ -34,16 +35,15 @@ const Layout = styled.div`
   }
 `;
 
-const CrewName = styled.div`
+const Name = styled.div`
   color: ${palette.white};
   margin-bottom: 8px;
   text-align: center;
 `;
 
-const Image = styled.div`
+const Image = styled.img`
   width: 100%;
   height: 100%;
-  background-image: ${({ url }) => `url(${url}), transparent`};
 `;
 
 const ChipLayout = styled.div`
@@ -53,7 +53,7 @@ const ChipLayout = styled.div`
   left: 0;
   right: 0;
   margin: auto;
-  cursor: ${({ isOpen }) => (isOpen ? 'cursor' : 'default')};
+  cursor: pointer;
 `;
 
 export default CrewCard;
