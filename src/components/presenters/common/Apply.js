@@ -1,11 +1,11 @@
 import { palette } from 'lib/styles';
 import styled from 'styled-components';
 
-const Apply = () => {
+const Apply = ({ onClick }) => {
   return (
     <Layout>
       <Message>설정을 끝마친 뒤에 우측 적용하기 버튼을 눌러주세요.</Message>
-      <Button>적용하기</Button>
+      <Button onClick={onClick}>적용하기</Button>
     </Layout>
   );
 };
@@ -36,6 +36,12 @@ const Button = styled.button`
   font-size: 16px;
   border: 1px solid ${palette.secondary_red};
   box-shadow: 0 2px 20px rgba(226, 116, 146, 0.6);
+
+  transition: 0.4s ease;
+
+  &:hover {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
 `;
 
 export default Apply;

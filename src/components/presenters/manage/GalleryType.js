@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { palette } from 'lib/styles';
 
-const GalleryType = ({ type, setType }) => {
+const GalleryType = ({ type, setType, onChangeGallery }) => {
   const [image, setImage] = useState([]);
 
   const onChange = e => {
@@ -16,6 +16,7 @@ const GalleryType = ({ type, setType }) => {
     const reader = new FileReader();
     reader.onload = () => {
       setImage([...image, reader.result]);
+      onChangeGallery([...image, reader.result]);
     };
     reader.readAsDataURL(files[0]);
   };

@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Header from 'components/containers/headers/index';
 import Exhibition from 'components/containers/manage/Exhibition';
 // presenters
-import Apply from 'components/presenters/common/Apply';
 import Banner from 'components/presenters/common/Banner';
 import Footer from 'components/presenters/common/Footer';
 
@@ -14,7 +13,6 @@ const ManageCrewPage = () => {
       <Header />
       <Banner message="우리의 축제. 우리의 손으로." />
       <Layout>
-        <Apply />
         <Exhibition />
       </Layout>
       <Footer />
@@ -27,6 +25,7 @@ const Layout = styled(MainLayout)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 240px;
 `;
 
 export default ManageCrewPage;

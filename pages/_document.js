@@ -46,7 +46,7 @@ class MyDocument extends Document {
           <meta name="robots" content="index, follow" />
           <meta
             httpEquiv="Content-Security-Policy"
-            content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com"
+            content="default-src *; img-src * 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com"
           />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <DefaultInfoMeta />

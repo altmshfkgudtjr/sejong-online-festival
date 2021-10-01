@@ -14,6 +14,18 @@ export const getExhibition = exhibitionId => {
   return request.get(`/api/exhibition/${exhibitionId}`);
 };
 
+export const postExhibition = data => {
+  return request.post(`/api/exhibition`, data);
+};
+
+export const postExhibitionBanner = (exhibitionId, data) => {
+  return request.put(`/api/exhibition/${exhibitionId}/banner`, data);
+};
+
+export const postExhibitionGallery = (exhibitionId, data) => {
+  return request.put(`/api/exhibition/${exhibitionId}/photo`, data);
+};
+
 /**
  * 나의 전시회 GET
  */
