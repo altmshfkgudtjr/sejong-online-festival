@@ -1,7 +1,7 @@
 /** 미디어쿼리 Value */
 export const mediaValue = {
   xlarge: 1200,
-  large: 992,
+  large: 1080,
   medium: 768,
   small: 576,
   xsmall: 375,
