@@ -20,3 +20,9 @@ export const getLive = createAsyncThunk('main/getLive', async (_, { dispatch }) 
   dispatch(actions.setLiveVideoList(res));
   return res;
 });
+
+export const getCrew = createAsyncThunk('main/getCrew', async (_, { dispatch }) => {
+  const res = await mainAPI.getCrew();
+  dispatch(actions.setCrewList(res));
+  return res;
+});

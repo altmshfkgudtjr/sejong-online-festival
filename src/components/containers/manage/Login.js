@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 import Logo from 'components/layouts/Logo';
 // presenters
-import Period from 'components/presenters/login/Period';
 import Inputs from 'components/presenters/login/Inputs';
-import SubText from 'components/presenters/login/SubText';
+import Period from 'components/presenters/login/Period';
 import LoginBtn from 'components/presenters/login/LoginBtn';
 
 const Background = styled.div`
   position: relative;
-  background: #0a0511;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -23,18 +21,17 @@ const Container = styled.div`
   align-items: center;
 `;
 
-function LoginContainer() {
+const Login = () => {
   return (
     <Background>
       <Container>
         <Period />
         <Logo />
-        <Inputs id="학번" pw="비밀번호" />
-        <SubText />
-        <LoginBtn text="로그인" color="red" />
+        <Inputs id="접근 아이디" pw="접근 암호" />
+        <LoginBtn text="참여하기" color="blue" />
       </Container>
     </Background>
   );
-}
+};
 
-export default LoginContainer;
+export default Login;
