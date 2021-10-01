@@ -25,10 +25,10 @@ export const palette = {
   primary: 'linear-gradient(to right, #81D0EE, #BAA5FB 25%, #E16DBF 75%, #F86D83);',
 
   /* Secondary Color */
-  secondary1: '#94CBEB',
-  secondary2: '#BC9BEA',
-  secondary3: '#CD7DC7',
-  secondary4: '#E37590',
+  secondary_blue: '#94CBEB',
+  secondary_purple: '#BC9BEA',
+  secondary_pink: '#CD7DC7',
+  secondary_red: '#E37590',
 
   /* Semantic Color */
   semantic: {
@@ -39,7 +39,6 @@ export const palette = {
   font: {
     primary: '#3a3a3a',
     secondary: '#6E6B84',
-    tertiary1: '#6e6f70',
   },
 
   /* Backgroud Color */
