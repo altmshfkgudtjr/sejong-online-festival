@@ -1,37 +1,54 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { palette } from 'lib/styles';
-import Demo from 'components/presenters/common/Cropper';
+import ImageCropper from 'components/presenters/common/Cropper';
 import GalleryType from 'components/presenters/manage/GalleryType';
 
-const Crew = () => {
-  const [type, setType] = useState('youtube');
+const Exhibition = () => {
+  const [type, setType] = useState('video_youtube');
+  const [title, setTitle] = useState('');
+  const [youtubeLink, setYoutubeLink] = useState('');
+  const [cropData, setCropData] = useState('');
 
   const onChangeSelect = e => {
     const { value } = e.target;
     if (value === 'youtube') {
-      setType('youtube');
+      setType('video_youtube');
     } else {
       setType('gallery_normal');
     }
   };
 
+  const onChangeTitle = e => {
+    const { value } = e.target;
+    setTitle(value);
+  };
+
+  const onChangeYoutubeLink = e => {
+    const { value } = e.target;
+    setYoutubeLink(value);
+  };
+
   const onChangeType = value => setType(value);
+  const onChangeCropData = data => setCropData(data);
 
   return (
     <Layout>
       <Title>전시회</Title>
-      <Input placeholder="전시회명" />
+      <Input placeholder="전시회명" onChange={onChangeTitle} />
       <Title>썸네일</Title>
       <Description>권장 이미지는 3:4 비율 300x400(px) 과 같습니다.</Description>
-      <Demo />
+      <Description>이미지를 잘라서 사용해보세요.</Description>
+      <ImageCropper cropData={cropData} setCropData={onChangeCropData} />
       <Title>템플릿</Title>
       <Select onChange={onChangeSelect}>
         <option value="youtube">YOUTUBE VIDEO</option>
         <option value="gallery">GALLERY</option>
       </Select>
-      {type === 'youtube' && <Input placeholder="YOUTUBE 링크 입력" />}
-      {type !== 'youtube' && <GalleryType type={type} setType={onChangeType} />}
+      {type === 'video_youtube' && (
+        <Input placeholder="YOUTUBE 링크 입력" onChange={onChangeYoutubeLink} />
+      )}
+      {type !== 'video_youtube' && <GalleryType type={type} setType={onChangeType} />}
     </Layout>
   );
 };
@@ -70,13 +87,17 @@ const Select = styled.select`
   background: ${palette.background.bg2};
   padding: 0 32px;
   margin: 16px 0;
-  color: #969696;
+  color: ${palette.white};
 `;
 
 const Description = styled.p`
   font-size: 16px;
   color: ${palette.font.secondary};
   margin: 16px 0;
+
+  & + & {
+    margin: 0 0 16px;
+  }
 `;
 
-export default Crew;
+export default Exhibition;

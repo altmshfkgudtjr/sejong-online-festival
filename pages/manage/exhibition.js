@@ -2,8 +2,7 @@ import MainLayout from 'components/layouts';
 import styled from 'styled-components';
 // containers
 import Header from 'components/containers/headers/index';
-import Exhibition from 'components/containers/main/Exhibition';
-import Crew from 'components/containers/manage/Crew';
+import Exhibition from 'components/containers/manage/Exhibition';
 // presenters
 import Apply from 'components/presenters/common/Apply';
 import Banner from 'components/presenters/common/Banner';
@@ -16,7 +15,7 @@ const ManageCrewPage = () => {
       <Banner message="우리의 축제. 우리의 손으로." />
       <Layout>
         <Apply />
-        <Crew />
+        <Exhibition />
       </Layout>
       <Footer />
     </>

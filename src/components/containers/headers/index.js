@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MainLayout from 'components/layouts';
 import MiniLogo from 'components/layouts/MiniLogo';
 // styles
-import { palette } from 'lib/styles';
+import { palette, zIndex } from 'lib/styles';
 
 const Header = () => {
   return (
@@ -28,6 +28,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   height: 58px;
   background: ${palette.background.bg1};
+  z-index: ${zIndex.header};
 `;
 
 const HeaderLayout = styled(MainLayout)`
