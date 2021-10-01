@@ -7,8 +7,8 @@ const Term = styled.h2`
   color: ${palette.white};
 `;
 
-function Date() {
+function Period() {
   return <Term>October 19-22</Term>;
 }
 
-export default Date;
+export default Period;

@@ -1,13 +1,16 @@
-import MainContainer from 'components/containers/main/MainContainer';
-import Link from 'next/link';
+// components
+import Intro from 'components/containers/main/Intro';
+import Header from 'components/containers/main/Header';
+import IntroInfo from 'components/presenters/main/IntroInfo';
 
 export default function MainPage() {
   return (
     <>
-      <MainContainer />
-      <Link href="/login" pasHref>
-        <a>로그인하기</a>
-      </Link>
+      <Intro>
+        <IntroInfo />
+      </Intro>
+
+      <Header />
     </>
   );
 }

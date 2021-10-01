@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
 		padding: 0;
 		margin: 0;
 		font-size: 16px;
+		background-color: #0a0511;
 	}
 
 	html {

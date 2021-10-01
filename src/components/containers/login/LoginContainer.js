@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Date from 'components/presenters/login/Date';
+import Period from 'components/presenters/login/Period';
 import Inputs from 'components/presenters/login/Inputs';
 import Logo from 'components/layouts/Logo';
 import SubText from 'components/presenters/login/SubText';
@@ -27,7 +27,7 @@ function LoginContainer() {
   return (
     <Background>
       <Container>
-        <Date />
+        <Period />
         <Logo />
         <Inputs />
         <SubText />
