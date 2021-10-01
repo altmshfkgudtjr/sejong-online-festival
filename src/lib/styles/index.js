@@ -14,6 +14,7 @@ export const mediaQuery = {
   medium: `@media (min-width: ${mediaValue.medium}px)`,
   small: `@media (min-width: ${mediaValue.small}px)`,
   xsmall: `@media (min-width: ${mediaValue.xsmall}px)`,
+  custom: value => `@media (min-width: ${value}px)`,
 };
 
 /** 색상표 */

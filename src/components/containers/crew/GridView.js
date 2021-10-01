@@ -8,10 +8,10 @@ const GridView = () => {
   const onClickContent = content => initModal({ name: 'Preview', args: { src: content } });
 
   const contents = [
-    '/images/mainLeft.png',
-    '/images/mainRight.png',
-    '/images/logo.png',
-    '/images/mainLeft.png',
+    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainLeft.png`,
+    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainRight.png`,
+    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`,
+    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainLeft.png`,
   ];
 
   return (

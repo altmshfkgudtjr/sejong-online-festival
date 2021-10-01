@@ -7,7 +7,7 @@ const Image = styled.img`
 `;
 
 function Logo() {
-  return <Image src="/images/logo.png" alt="" />;
+  return <Image src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`} alt="" />;
 }
 
 export default Logo;

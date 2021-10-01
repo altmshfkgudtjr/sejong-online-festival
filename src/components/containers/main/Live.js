@@ -8,16 +8,24 @@ import { getLive } from 'slices/main.thunk';
 import { useSelector, useDispatch } from 'hooks/common/useStore';
 // styles
 import { palette } from 'lib/styles';
+// utils
+import { getYoutubeThumbnail } from 'lib/utils/youtube';
 
 const Live = () => {
   const dispatch = useDispatch();
   const liveVideoList = useSelector(state => state.main.liveVideoList);
 
   const LiveVideoList = liveVideoList.map((live, idx) => (
-    <VideoLayout key={idx}>
-      <Logo className="noselect" src="/images/logo.png" alt="" />
-      <Video />
-    </VideoLayout>
+    <a href={live.link} target="_blank" key={idx}>
+      <VideoLayout>
+        <Logo
+          className="noselect"
+          src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`}
+          alt=""
+        />
+        <Video url={getYoutubeThumbnail(live.link)} />
+      </VideoLayout>
+    </a>
   ));
 
   useEffect(() => {
@@ -80,14 +88,31 @@ const VideoLayout = styled.div`
   max-width: 840px;
   height: 0;
   margin-left: 48px;
+  background-color: ${palette.background.bg2};
   cursor: pointer;
 `;
 
 const Video = styled.div`
+  position: relative;
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
-  background-color: ${palette.background.bg2};
+  background: ${({ url }) => (url ? `url(${url})` : '')};
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+
+  &:hover {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
 `;
 
 const Logo = styled.img`

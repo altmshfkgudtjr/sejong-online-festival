@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 // styles
-import { onlyHover } from 'lib/styles';
+import { onlyHover, mediaQuery } from 'lib/styles';
 
 const Intro = ({ children }) => {
   return (
@@ -8,10 +8,10 @@ const Intro = ({ children }) => {
       <TopContainer>
         {children}
         <LeftImage>
-          <Image src="/images/mainLeft.png" />
+          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainLeft.png`} />
         </LeftImage>
         <RightImage>
-          <Image src="/images/mainRight.png" />
+          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainRight.png`} />
         </RightImage>
       </TopContainer>
     </Background>
@@ -41,25 +41,69 @@ const ImageLayout = styled.div`
 `;
 
 const LeftImage = styled(ImageLayout)`
-  left: -40vw;
   clip-path: polygon(0 0, 100% 0, 100% 0, 70% 100%, 0 100%);
+  left: -100vw;
 
   ${onlyHover} {
     &:hover {
-      left: -10vw;
+      left: -60vw;
       opacity: 1;
+    }
+  }
+
+  ${mediaQuery.custom(1200)} {
+    left: -50vw;
+
+    ${onlyHover} {
+      &:hover {
+        left: -20vw;
+        opacity: 1;
+      }
+    }
+  }
+
+  ${mediaQuery.custom(1600)} {
+    left: -40vw;
+
+    ${onlyHover} {
+      &:hover {
+        left: -10vw;
+        opacity: 1;
+      }
     }
   }
 `;
 
 const RightImage = styled(ImageLayout)`
-  right: -40vw;
   clip-path: polygon(0 100%, 30% 0, 100% 0, 100% 100%, 100% 100%);
+  right: -100vw;
 
   ${onlyHover} {
     &:hover {
-      right: -10vw;
+      right: -60vw;
       opacity: 1;
+    }
+  }
+
+  ${mediaQuery.custom(1200)} {
+    right: -50vw;
+
+    ${onlyHover} {
+      &:hover {
+        right: -20vw;
+        opacity: 1;
+      }
+    }
+  }
+
+  ${mediaQuery.custom(1600)} {
+    right: -40vw;
+
+    ${onlyHover} {
+      &:hover {
+        right: -10vw;
+        opacity: 1;
+      }
     }
   }
 `;

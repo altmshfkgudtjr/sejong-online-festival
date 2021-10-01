@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import MainLayout from 'components/layouts';
 import Emphahsis from 'components/presenters/common/Emphasis';
 import EsportsCard from 'components/presenters/esports/Card';
+// slices
+import { getEsportsEventList } from 'slices/esports.thunk';
 // hooks
 import { useSelector, useDispatch } from 'hooks/common/useStore';
 // utils
@@ -11,6 +13,20 @@ import { formatToPrice } from 'lib/utils/number';
 
 const Esports = () => {
   const dispatch = useDispatch();
+  const eventList = useSelector(state => state.esports.list);
+
+  useEffect(() => {
+    dispatch(getEsportsEventList());
+  }, [dispatch]);
+
+  const EventList = eventList.map((event, idx) => (
+    <EsportsCard
+      id={event.event_id}
+      name={event.name}
+      url={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}${event.banner_photo}`}
+      key={idx}
+    />
+  ));
 
   return (
     <Layout>
@@ -20,11 +36,7 @@ const Esports = () => {
         <strong>E-SPORTS</strong>
       </Emphahsis>
 
-      <ScrollLayout>
-        <EsportsCard name="리그오브레전드" />
-        <EsportsCard name="배틀그라운드" />
-        <EsportsCard name="피파온라인4" />
-      </ScrollLayout>
+      <ScrollLayout>{EventList}</ScrollLayout>
 
       <Emphahsis>
         총 상금 <strong>{formatToPrice(2450000)}</strong>원의 주인공은?

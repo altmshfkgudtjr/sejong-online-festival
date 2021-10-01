@@ -13,6 +13,7 @@ const RefEvent = [];
 export const newToast = createAsyncThunk(
   'toast/newToast',
   async ({ title, message, time }, { dispatch }) => {
+    console.log('1');
     if (RefEvent.length !== 0) {
       let event = RefEvent.shift();
       clearTimeout(event);

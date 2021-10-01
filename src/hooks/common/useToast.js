@@ -10,7 +10,7 @@ import { deleteToast } from 'slices/toast';
 import { useSelector, useDispatch } from 'hooks/common/useStore';
 // styles
 import * as animations from 'lib/styles/animations';
-import { palette, zIndex } from 'lib/styles';
+import { zIndex } from 'lib/styles';
 
 /**
  * Toast Hook

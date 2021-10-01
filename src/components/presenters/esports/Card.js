@@ -40,8 +40,7 @@ const Card = styled.div`
     top: 2px;
     width: calc(100% - 4px);
     height: calc(100% - 4px);
-    background-color: ${({ url }) =>
-      url ? `url(${url}), ${palette.background.bg2}` : palette.background.bg2};
+    background-color: ${({ url }) => (url ? `url(${url})` : palette.background.bg2)};
     z-index: -1;
   }
 `;

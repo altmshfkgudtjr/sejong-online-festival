@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 // components
 import MainLayout from 'components/layouts';
 // presenters
@@ -10,90 +10,37 @@ import { getExhibitionList } from 'slices/exhibition.thunk';
 import { useSelector, useDispatch } from 'hooks/common/useStore';
 // styles
 import { palette } from 'lib/styles';
+// utils
+import { throttle } from 'lib/utils/lazy';
 
 const Exhibition = () => {
   const dispatch = useDispatch();
   const exhibitionList = useSelector(state => state.exhibition.exhibitionList);
 
+  const [filter, setFilter] = useState('');
+  const ref = useRef(null);
+
+  const onKeyUp = throttle(e => {
+    const value = e.target.value;
+    setFilter(value);
+  }, 200);
+
   useEffect(() => {
     dispatch(getExhibitionList());
   }, [dispatch]);
 
-  // const exhibitionList = [
-  //   {
-  //     id: '1',
-  //     name: '늘헴 코러스',
-  //     banner_photo: '/images/crew1.png',
-  //     type: 'Youtube',
-  //   },
-  //   {
-  //     id: '2',
-  //     name: '더블랙',
-  //     banner_photo: '/images/crew2.png',
-  //     type: 'Gallery',
-  //   },
-  //   {
-  //     id: '3',
-  //     name: '소리더하기',
-  //     banner_photo: '/images/crew3.png',
-  //     type: 'Youtube',
-  //   },
-  //   {
-  //     id: '4',
-  //     name: '페이지7',
-  //     banner_photo: '/images/crew4.png',
-  //     type: 'Youtube',
-  //   },
-  //   {
-  //     id: '5',
-  //     name: '율',
-  //     banner_photo: '/images/crew5.png',
-  //     type: 'Gallery',
-  //   },
-  //   {
-  //     id: '6',
-  //     name: '인터페이스',
-  //     banner_photo: '/images/crew6.png',
-  //     type: 'Gallery',
-  //   },
-  //   {
-  //     id: '7',
-  //     name: '늘헴 코러스',
-  //     banner_photo: '/images/crew1.png',
-  //     type: 'Youtube',
-  //   },
-  //   {
-  //     id: '8',
-  //     name: '늘헴 코러스',
-  //     banner_photo: '/images/crew2.png',
-  //     type: 'Youtube',
-  //   },
-  //   {
-  //     id: '9',
-  //     name: '늘헴 코러스',
-  //     banner_photo: '/images/crew3.png',
-  //     type: 'Youtube',
-  //   },
-  //   {
-  //     id: '10',
-  //     name: '늘헴 코러스',
-  //     banner_photo: '/images/crew4.png',
-  //     type: 'Youtube',
-  //   },
-  // ];
+  const ExhibitionList = exhibitionList
+    .filter(v => !!~v.name.indexOf(filter))
+    .map((exhibition, index) => <ExhibitionCard exhibition={exhibition} key={index} />);
 
   return (
     <Layout>
       <Title>작품전시 및 동아리</Title>
       <SearchLayout>
-        <Input placeholder="동아리명" />
-        <SearchIcon src="/images/ionic-ios-search.png" />
+        <Input placeholder="동아리명" ref={ref} onKeyUp={onKeyUp} />
+        <SearchIcon src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/ionic-ios-search.png`} />
       </SearchLayout>
-      <CardLayout>
-        {exhibitionList.map((exhibition, index) => (
-          <ExhibitionCard exhibition={exhibition} key={index} />
-        ))}
-      </CardLayout>
+      <CardLayout>{ExhibitionList}</CardLayout>
     </Layout>
   );
 };
@@ -103,7 +50,7 @@ const Layout = styled(MainLayout)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 124px;
+  margin-bottom: 240px;
 `;
 
 const Title = styled.h2`

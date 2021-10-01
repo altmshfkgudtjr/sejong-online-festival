@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 // lib
 import { palette } from 'lib/styles';
+import * as animations from 'lib/styles/animations';
 
 /**
  * Toast
@@ -21,6 +22,9 @@ const Toast = ({ title, subTitle, ...props }) => {
 };
 
 const ToastLayout = styled.div`
+  position: absolute;
+  bottom: 40px;
+  right: 30px;
   width: ${({ whiteSpace }) =>
     whiteSpace ? `calc(100vw - (${whiteSpace}px * 2))` : `calc(100vw - (32px * 2))`};
   max-width: 320px;
@@ -29,6 +33,7 @@ const ToastLayout = styled.div`
   border-radius: 10px;
   background-color: ${palette.white};
   overflow: hidden;
+  animation: ${animations.fadeInBottom} 0.3s ease;
 `;
 
 const Title = styled.h1`

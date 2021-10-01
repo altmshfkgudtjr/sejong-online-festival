@@ -11,7 +11,11 @@ function MiniLogo() {
   return (
     <Link href="/" passHref>
       <a>
-        <Image className="noselect" src="/images/logo.png" alt="" />
+        <Image
+          className="noselect"
+          src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`}
+          alt=""
+        />
       </a>
     </Link>
   );

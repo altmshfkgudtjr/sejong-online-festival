@@ -4,13 +4,14 @@ import storeWrapper from 'slices';
 // hooks
 import useToast from 'hooks/common/useToast';
 import useModal from 'hooks/common/useModal';
+import useAuthorization from 'hooks/common/useAuthorization';
 // styles
 import '../public/font.css';
 
 const App = ({ Component, pageProps }) => {
   const { Toast } = useToast();
   const { Modal } = useModal();
-  const isProd = process.env.NODE_ENV === 'prod`uction';
+  useAuthorization();
 
   const getLayout = Component.getLayout || (page => page);
 

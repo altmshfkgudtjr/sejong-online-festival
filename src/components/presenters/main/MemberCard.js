@@ -32,7 +32,13 @@ const MemberCard = ({ name, photo, time, openTime, url }) => {
     <Wrapper>
       <Time>{time}</Time>
       <Layout>
-        {!isOpen && <Logo className="noselect" src="/images/logo.png" alt="" />}
+        {!isOpen && (
+          <Logo
+            className="noselect"
+            src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`}
+            alt=""
+          />
+        )}
         <ButtonLayout className="noselect" isOpen={isOpen}>
           <PlayButton />
         </ButtonLayout>
@@ -58,6 +64,10 @@ const PlayButton = () => (
 
 const Wrapper = styled.div`
   position: relative;
+
+  & ~ & {
+    margin-left: 60px;
+  }
 `;
 
 const Layout = styled.div`
@@ -70,10 +80,6 @@ const Layout = styled.div`
   margin-bottom: 24px;
   border-radius: 16px;
   background-color: ${palette.background.bg2};
-
-  & ~ & {
-    margin-left: 60px;
-  }
 `;
 
 const Time = styled.div`

@@ -35,7 +35,10 @@ const Comments = ({ contentId, commentList = [] }) => {
     <Layout>
       <InputLayout>
         <Input placeholder="응원하기 메세지를 남겨주세요" ref={ref} onKeyPress={onKeyPress} />
-        <Icon src="/images/ionic-ios-send.png" onClick={onSend} />
+        <Icon
+          src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/ionic-ios-send.png`}
+          onClick={onSend}
+        />
       </InputLayout>
       {CommentList}
     </Layout>

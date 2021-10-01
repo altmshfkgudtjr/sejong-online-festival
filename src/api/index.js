@@ -12,7 +12,7 @@ const replaceURL = url => {
 
   if (process.env.NODE_ENV === 'production') {
     if (url.startsWith('/api/')) {
-      targetURL = url.replace('/api/', `${process.env.NEXT_PUBLIC_API_SERVER_1}/`);
+      targetURL = url.replace('/api/', `${process.env.NEXT_PUBLIC_API_SERVER_1}/api/`);
     }
     if (url.startsWith('/next/')) {
       targetURL = url.replace('/next/', '/new/');

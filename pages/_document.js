@@ -44,7 +44,10 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="robots" content="index, follow" />
-          <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+          <meta
+            httpEquiv="Content-Security-Policy"
+            content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com"
+          />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <DefaultInfoMeta />
           {/* ---------------------------------- Styled-Component --------------------------------- */}
@@ -60,3 +63,5 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;
+
+// http://192.168.50.185:5000/uploads/logo.png

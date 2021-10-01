@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 const ColumnView = () => {
   const contents = [
-    '/images/mainLeft.png',
-    '/images/mainRight.png',
-    '/images/logo.png',
-    '/images/mainLeft.png',
+    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainLeft.png`,
+    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainRight.png`,
+    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`,
+    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainLeft.png`,
   ];
 
   return (

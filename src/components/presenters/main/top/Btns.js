@@ -18,10 +18,6 @@ const Button = styled.button`
   font-size: 16px;
   transition: 0.4s ease;
 
-  & ~ & {
-    margin-left: 40px;
-  }
-
   &:hover {
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
@@ -35,6 +31,7 @@ const AttendButton = styled(Button)`
 const ShareButton = styled(Button)`
   border: 1px solid #e27492;
   box-shadow: 0 2px 20px rgba(226, 116, 146, 0.6);
+  margin-left: 40px;
 `;
 
 function Btns() {
@@ -45,7 +42,11 @@ function Btns() {
   return (
     <Layout>
       <AttendButton onClick={onClickStart}>참여하기</AttendButton>
-      <ShareButton>공유하기</ShareButton>
+      <Link href="/login" passHref>
+        <a>
+          <ShareButton>로그인</ShareButton>
+        </a>
+      </Link>
     </Layout>
   );
 }

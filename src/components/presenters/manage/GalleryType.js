@@ -24,10 +24,10 @@ const GalleryType = ({ type, setType }) => {
     <>
       <Layout>
         <TypeLayout typeState={type === 'gallery_normal'} onClick={() => setType('gallery_normal')}>
-          <Icon src="/images/bigType.png" />큰 이미지
+          <Icon src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/bigType.png`} />큰 이미지
         </TypeLayout>
         <TypeLayout typeState={type === 'gallery_grid'} onClick={() => setType('gallery_grid')}>
-          <Icon src="/images/gridType.png" />
+          <Icon src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/gridType.png`} />
           그리드 이미지
         </TypeLayout>
       </Layout>

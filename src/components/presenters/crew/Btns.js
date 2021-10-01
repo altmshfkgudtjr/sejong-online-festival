@@ -1,7 +1,11 @@
 import styled from 'styled-components';
-import { palette } from 'lib/styles';
-import { copyToClipboard } from 'lib/utils/clipboard';
+import Link from 'next/link';
+// hooks
 import useToast from 'hooks/common/useToast';
+// styles
+import { palette } from 'lib/styles';
+// utils
+import { copyToClipboard } from 'lib/utils/clipboard';
 
 const Btns = () => {
   const { initToast } = useToast();
@@ -18,7 +22,11 @@ const Btns = () => {
 
   return (
     <Layout>
-      <GoBackButton>뒤로가기</GoBackButton>
+      <Link href="/#exhibition" passHref>
+        <a>
+          <GoBackButton>뒤로가기</GoBackButton>
+        </a>
+      </Link>
       <ShareButton onClick={onClickBtn}>공유하기</ShareButton>
     </Layout>
   );
@@ -45,6 +53,12 @@ const ShareButton = styled(GoBackButton)`
   border: 1px solid #e27492;
   box-shadow: 0 2px 20px rgba(226, 116, 146, 0.6);
   margin-left: 80px;
+
+  transition: 0.4s ease;
+
+  &:hover {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
 `;
 
 export default Btns;

@@ -48,7 +48,7 @@ const ExhibitionPage = () => {
       <MainLayout>
         {exhibition.type === 'gallery_normal' && <ColumnView />}
         {exhibition.type === 'gallery_grid' && <GridView />}
-        {/* TODO 유튜브 전시회 연결 */}
+        {/* TODO 유튜브 전시회 컨테이너 연결 */}
         {exhibition.type === 'video_youtube' && null}
         <Btns />
         <Emphasis>

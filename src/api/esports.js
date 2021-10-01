@@ -4,7 +4,7 @@ import request from 'api';
  * 이벤트 리스트 GET
  */
 export const getEventList = () => {
-  return request.get('/api/esports');
+  return request.get('/api/esports/events');
 };
 
 /**
