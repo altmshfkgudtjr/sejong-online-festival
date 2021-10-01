@@ -10,7 +10,7 @@ import { palette } from 'lib/styles';
  *   <strong>강조구문</strong>
  * </Emphasis>
  */
-const Emphahsis = ({ children }) => {
+const Emphasis = ({ children }) => {
   return <Message>{children}</Message>;
 };
 
@@ -29,4 +29,4 @@ const Message = styled.div`
   }
 `;
 
-export default Emphahsis;
+export default Emphasis;
