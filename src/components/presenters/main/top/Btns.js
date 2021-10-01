@@ -12,6 +12,10 @@ function Btns() {
     document.querySelector('html').scrollTop = window.innerHeight;
   };
 
+  const onLogout = () => {
+    window.localStorage.removeItem('tk');
+  };
+
   return (
     <Layout>
       <AttendButton onClick={onClickStart}>참여하기</AttendButton>
@@ -22,7 +26,7 @@ function Btns() {
           </a>
         </Link>
       )}
-      {user.user_id && <UserId as="div">{user.user_id}</UserId>}
+      {user.user_id && <UserId onClick={onLogout}>{user.user_id}</UserId>}
     </Layout>
   );
 }
