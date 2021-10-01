@@ -21,6 +21,8 @@ export const palette = {
   white: '#ffffff',
   black: '#000000',
 
+  primary: 'linear-gradient(to right, #81D0EE, #BAA5FB 25%, #E16DBF 75%, #F86D83);',
+
   /* Primary Color */
   red005: '#ffebef',
   red010: '#ffcdd3',
