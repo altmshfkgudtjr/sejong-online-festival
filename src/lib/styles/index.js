@@ -1,7 +1,7 @@
 /** 미디어쿼리 Value */
 export const mediaValue = {
   xlarge: 1200,
-  large: 992,
+  large: 1080,
   medium: 768,
   small: 576,
   xsmall: 375,
@@ -20,6 +20,8 @@ export const mediaQuery = {
 export const palette = {
   white: '#ffffff',
   black: '#000000',
+
+  primary: 'linear-gradient(to right, #81D0EE, #BAA5FB 25%, #E16DBF 75%, #F86D83);',
 
   /* Primary Color */
   red005: '#ffebef',

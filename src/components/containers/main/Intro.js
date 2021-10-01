@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+// styles
+import { onlyHover } from 'lib/styles';
 
 const Intro = ({ children }) => {
   return (
-    <Background>
+    <Background className="noselect">
       <TopContainer>
         {children}
         <LeftImage>
@@ -42,9 +44,11 @@ const LeftImage = styled(ImageLayout)`
   left: -40vw;
   clip-path: polygon(0 0, 100% 0, 100% 0, 70% 100%, 0 100%);
 
-  &:hover {
-    left: -10vw;
-    opacity: 1;
+  ${onlyHover} {
+    &:hover {
+      left: -10vw;
+      opacity: 1;
+    }
   }
 `;
 
@@ -52,9 +56,11 @@ const RightImage = styled(ImageLayout)`
   right: -40vw;
   clip-path: polygon(0 100%, 30% 0, 100% 0, 100% 100%, 100% 100%);
 
-  &:hover {
-    right: -10vw;
-    opacity: 1;
+  ${onlyHover} {
+    &:hover {
+      right: -10vw;
+      opacity: 1;
+    }
   }
 `;
 
