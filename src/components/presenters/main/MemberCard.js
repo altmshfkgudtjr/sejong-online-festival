@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 // components
 import Chip from 'components/containers/common/Chip';
 // styles
-import { palette } from 'lib/styles';
+import { palette, onlyHover } from 'lib/styles';
 // utils
-import { getDateTime, onFormatTime } from 'lib/utils/time';
+import { getDateTime, onFormatDate, onFormatTime } from 'lib/utils/time';
 
 const MemberCard = ({ name, photo, time, openTime, url }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,21 +24,24 @@ const MemberCard = ({ name, photo, time, openTime, url }) => {
       setMessage(name);
     } else {
       setIsOpen(false);
-      setMessage(`${onFormatTime(openTime)} 공개`);
+      setMessage(`${onFormatDate(openTime)} 공개`);
     }
   }, [openTime]);
 
   return (
-    <Layout>
+    <Wrapper>
       <Time>{time}</Time>
-      <ChipLayout isOpen={isOpen} onClick={onClick}>
-        {isOpen && <Image url={photo} />}
-        <Chip message={message} />
-      </ChipLayout>
-      <ButtonLayout isOpen={isOpen}>
-        <PlayButton />
-      </ButtonLayout>
-    </Layout>
+      <Layout>
+        {!isOpen && <Logo className="noselect" src="/images/logo.png" alt="" />}
+        <ButtonLayout className="noselect" isOpen={isOpen}>
+          <PlayButton />
+        </ButtonLayout>
+        <ChipLayout isOpen={isOpen} onClick={onClick}>
+          {isOpen && <Image url={photo} />}
+          <Chip message={message} />
+        </ChipLayout>
+      </Layout>
+    </Wrapper>
   );
 };
 
@@ -53,9 +56,13 @@ const PlayButton = () => (
   </svg>
 );
 
-const Layout = styled.div`
-  flex: 1 1 auto;
+const Wrapper = styled.div`
   position: relative;
+`;
+
+const Layout = styled.div`
+  position: relative;
+  flex: 1 1 auto;
   width: auto;
   min-width: 300px;
   height: 0;
@@ -63,16 +70,16 @@ const Layout = styled.div`
   margin-bottom: 24px;
   border-radius: 16px;
   background-color: ${palette.background.bg2};
-  overflow: hidden;
 
   & ~ & {
     margin-left: 60px;
   }
 `;
 
-const Time = styled.span`
+const Time = styled.div`
   color: ${palette.white};
   margin-bottom: 8px;
+  text-align: center;
 `;
 
 const Image = styled.div`
@@ -92,16 +99,39 @@ const ChipLayout = styled.div`
 `;
 
 const ButtonLayout = styled.div`
-  display: none;
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  cursor: pointer;
 
-  &:hover {
-    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+  ${onlyHover} {
+    &:hover {
+      opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
+    }
   }
+
+  &:active {
+    & path {
+      fill: #dadada;
+    }
+  }
+`;
+
+const Logo = styled.img`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 20px;
 `;
 
 export default MemberCard;

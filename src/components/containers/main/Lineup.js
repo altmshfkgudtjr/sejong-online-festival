@@ -43,6 +43,7 @@ const Lineup = () => {
 
 const Layout = styled(MainLayout)`
   max-width: 100%;
+  min-height: 486px;
   margin: 200px auto 140px auto;
   overflow: hidden;
 `;
