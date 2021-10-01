@@ -13,7 +13,7 @@ const Apply = () => {
 const Layout = styled.div`
   width: 100%;
   height: 38px;
-  margin: 40px 0;
+  margin: 40px 0 60px;
   position: relative;
   display: flex;
   justify-content: center;
