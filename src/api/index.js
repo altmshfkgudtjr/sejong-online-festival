@@ -44,13 +44,13 @@ const requesetErrorHandler = err => {
 
 /** Response 성공 handler */
 const responseSuccessHandler = res => {
-  if (res.data.code === '200' || (res.data.code === 200) | (res.data.result === 'success')) {
+  if (res.data.msg === 'success') {
     if (res.data.data) {
       // 반환값이 { code, message, data }인 경우
       return res.data.data;
-    } else if (res.data.results) {
+    } else if (res.data.result) {
       // 반환값이 { code, message, results }인 경우
-      return res.data.results;
+      return res.data.result;
     } else {
       // 반환값이 { code, message }인 경우
       return res.data;
