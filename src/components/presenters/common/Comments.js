@@ -1,43 +1,43 @@
 import styled from 'styled-components';
+import { useRef } from 'react';
+// styles
 import { palette } from 'lib/styles';
+// slices
+import { putComment } from 'slices/main.thunk';
+// hooks
+import { useDispatch } from 'hooks/common/useStore';
 
-const Comments = () => {
-  const comments = [
-    {
-      user_id: '16011040',
-      text: '화이팅 IML!',
-      date: '2021.09.21',
-    },
-    {
-      user_id: '16011040',
-      text: '화이팅 IML! 우승가자!',
-      date: '2021.09.21',
-    },
-    {
-      user_id: '16011040',
-      text: '응애 대상줘',
-      date: '2021.09.21',
-    },
-    {
-      user_id: '16011075',
-      text: '화이팅 IML!',
-      date: '2021.09.21',
-    },
-  ];
+const Comments = ({ contentId, commentList = [] }) => {
+  const dispatch = useDispatch();
+
+  const ref = useRef();
+
+  const onSend = () => {
+    const comment = ref.current.value;
+    dispatch(putComment({ contentId, comment }));
+  };
+
+  const onKeyPress = e => {
+    if (e.key === 'Enter') {
+      onSend();
+    }
+  };
+
+  const CommentList = commentList.map((comment, index) => (
+    <CommentLayout key={index}>
+      <UserId>{comment.user_id}</UserId>
+      <Comment>{comment.text}</Comment>
+      <Date>{comment.date}</Date>
+    </CommentLayout>
+  ));
 
   return (
     <Layout>
       <InputLayout>
-        <Input placeholder="응원하기 메세지를 남겨주세요" />
-        <Icon src="/images/ionic-ios-send.png" />
+        <Input placeholder="응원하기 메세지를 남겨주세요" ref={ref} onKeyPress={onKeyPress} />
+        <Icon src="/images/ionic-ios-send.png" onClick={onSend} />
       </InputLayout>
-      {comments.map((comment, index) => (
-        <CommentLayout key={index}>
-          <UserId>{comment.user_id}</UserId>
-          <Comment>{comment.text}</Comment>
-          <Date>{comment.date}</Date>
-        </CommentLayout>
-      ))}
+      {CommentList}
     </Layout>
   );
 };
@@ -79,8 +79,10 @@ const Input = styled.input`
 
 const Icon = styled.img`
   position: absolute;
-  top: 13.5px;
+  top: 9.5px;
   right: 16px;
+  padding: 4px;
+  cursor: pointer;
 `;
 
 const CommentLayout = styled.div`

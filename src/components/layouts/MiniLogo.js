@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const Image = styled.img`
@@ -7,7 +8,13 @@ const Image = styled.img`
 `;
 
 function MiniLogo() {
-  return <Image className="noselect" src="/images/logo.png" alt="" />;
+  return (
+    <Link href="/" passHref>
+      <a>
+        <Image className="noselect" src="/images/logo.png" alt="" />
+      </a>
+    </Link>
+  );
 }
 
 export default MiniLogo;

@@ -13,74 +13,74 @@ import { palette } from 'lib/styles';
 
 const Exhibition = () => {
   const dispatch = useDispatch();
-  // const exhibitionList = useSelector(state => state.exhibition.exhibitionList);
+  const exhibitionList = useSelector(state => state.exhibition.exhibitionList);
 
   useEffect(() => {
     dispatch(getExhibitionList());
   }, [dispatch]);
 
-  const exhibitionList = [
-    {
-      id: '1',
-      name: '늘헴 코러스',
-      banner_photo: '/images/crew1.png',
-      type: 'Youtube',
-    },
-    {
-      id: '2',
-      name: '더블랙',
-      banner_photo: '/images/crew2.png',
-      type: 'Gallery',
-    },
-    {
-      id: '3',
-      name: '소리더하기',
-      banner_photo: '/images/crew3.png',
-      type: 'Youtube',
-    },
-    {
-      id: '4',
-      name: '페이지7',
-      banner_photo: '/images/crew4.png',
-      type: 'Youtube',
-    },
-    {
-      id: '5',
-      name: '율',
-      banner_photo: '/images/crew5.png',
-      type: 'Gallery',
-    },
-    {
-      id: '6',
-      name: '인터페이스',
-      banner_photo: '/images/crew6.png',
-      type: 'Gallery',
-    },
-    {
-      id: '7',
-      name: '늘헴 코러스',
-      banner_photo: '/images/crew1.png',
-      type: 'Youtube',
-    },
-    {
-      id: '8',
-      name: '늘헴 코러스',
-      banner_photo: '/images/crew2.png',
-      type: 'Youtube',
-    },
-    {
-      id: '9',
-      name: '늘헴 코러스',
-      banner_photo: '/images/crew3.png',
-      type: 'Youtube',
-    },
-    {
-      id: '10',
-      name: '늘헴 코러스',
-      banner_photo: '/images/crew4.png',
-      type: 'Youtube',
-    },
-  ];
+  // const exhibitionList = [
+  //   {
+  //     id: '1',
+  //     name: '늘헴 코러스',
+  //     banner_photo: '/images/crew1.png',
+  //     type: 'Youtube',
+  //   },
+  //   {
+  //     id: '2',
+  //     name: '더블랙',
+  //     banner_photo: '/images/crew2.png',
+  //     type: 'Gallery',
+  //   },
+  //   {
+  //     id: '3',
+  //     name: '소리더하기',
+  //     banner_photo: '/images/crew3.png',
+  //     type: 'Youtube',
+  //   },
+  //   {
+  //     id: '4',
+  //     name: '페이지7',
+  //     banner_photo: '/images/crew4.png',
+  //     type: 'Youtube',
+  //   },
+  //   {
+  //     id: '5',
+  //     name: '율',
+  //     banner_photo: '/images/crew5.png',
+  //     type: 'Gallery',
+  //   },
+  //   {
+  //     id: '6',
+  //     name: '인터페이스',
+  //     banner_photo: '/images/crew6.png',
+  //     type: 'Gallery',
+  //   },
+  //   {
+  //     id: '7',
+  //     name: '늘헴 코러스',
+  //     banner_photo: '/images/crew1.png',
+  //     type: 'Youtube',
+  //   },
+  //   {
+  //     id: '8',
+  //     name: '늘헴 코러스',
+  //     banner_photo: '/images/crew2.png',
+  //     type: 'Youtube',
+  //   },
+  //   {
+  //     id: '9',
+  //     name: '늘헴 코러스',
+  //     banner_photo: '/images/crew3.png',
+  //     type: 'Youtube',
+  //   },
+  //   {
+  //     id: '10',
+  //     name: '늘헴 코러스',
+  //     banner_photo: '/images/crew4.png',
+  //     type: 'Youtube',
+  //   },
+  // ];
 
   return (
     <Layout>

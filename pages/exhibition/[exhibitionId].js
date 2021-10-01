@@ -13,6 +13,7 @@ import Btns from 'components/presenters/crew/Btns';
 import Comments from 'components/presenters/common/Comments';
 // slices
 import { getExhibition } from 'slices/exhibition.thunk';
+import { getCommentList } from 'slices/main.thunk';
 // hooks
 import { useSelector, useDispatch } from 'hooks/common/useStore';
 
@@ -22,6 +23,7 @@ const ExhibitionPage = () => {
 
   const dispatch = useDispatch();
   const exhibition = useSelector(state => state.exhibition.currentExhibition);
+  const commentList = useSelector(state => state.main.commentList);
 
   useEffect(() => {
     if (!exhibitionId) {
@@ -29,6 +31,14 @@ const ExhibitionPage = () => {
     }
 
     dispatch(getExhibition(exhibitionId));
+  }, [dispatch, exhibitionId]);
+
+  useEffect(() => {
+    if (!exhibitionId) {
+      return;
+    }
+
+    dispatch(getCommentList({ contentId: exhibitionId, skip: 0, limit: 10 }));
   }, [dispatch, exhibitionId]);
 
   return (
@@ -46,8 +56,7 @@ const ExhibitionPage = () => {
           <br />
           <strong>방명록</strong>
         </Emphasis>
-        {/* TODO 코멘트 데이터 바인딩! */}
-        <Comments />
+        <Comments contentId={exhibitionId} commentList={commentList} />
       </MainLayout>
       <Footer />
     </>
