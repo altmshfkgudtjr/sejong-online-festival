@@ -20,7 +20,7 @@ const Footer = () => {
 const Layout = styled.footer`
   width: 100%;
   height: 450px;
-  padding-top: 60px;
+  padding-top: 64px;
   background: ${palette.background.bg2};
 `;
 
@@ -37,13 +37,14 @@ const SubTitle = styled.h3`
 `;
 
 const Description = styled.p`
-  color: ${palette.font.secondary};
+  color: ${palette.white};
+  opacity: 0.6;
 `;
 
 const Copyright = styled.p`
   color: ${palette.white};
   font-size: 14px;
-  margin-top: 60px;
+  margin-top: 64px;
   text-align: end;
 `;
 
