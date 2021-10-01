@@ -4,10 +4,14 @@ import { useEffect } from 'react';
 import MainLayout from 'components/layouts';
 import Emphahsis from 'components/presenters/common/Emphasis';
 import EsportsCard from 'components/presenters/esports/Card';
+// hooks
+import { useSelector, useDispatch } from 'hooks/common/useStore';
 // utils
 import { formatToPrice } from 'lib/utils/number';
 
 const Esports = () => {
+  const dispatch = useDispatch();
+
   return (
     <Layout>
       <Emphahsis>

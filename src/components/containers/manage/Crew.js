@@ -17,6 +17,8 @@ const Crew = () => {
     }
   };
 
+  const onChangeType = value => setTypeState(value);
+
   return (
     <Layout>
       <Title>전시회</Title>
@@ -31,7 +33,7 @@ const Crew = () => {
       </Select>
       {selectState === 'youtube' && <Input placeholder="YOUTUBE 링크 입력" />}
       {selectState === 'gallery' && (
-        <GalleryType typeState={typeState} setTypeState={setTypeState} />
+        <GalleryType typeState={typeState} onChangeType={onChangeType} />
       )}
     </Layout>
   );

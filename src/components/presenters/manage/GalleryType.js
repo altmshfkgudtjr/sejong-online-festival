@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { palette } from 'lib/styles';
 
-const GalleryType = ({ typeState, setTypeState }) => {
+const GalleryType = ({ typeState, onChangeType }) => {
   const [image, setImage] = useState([]);
 
   const onChange = e => {
@@ -20,17 +20,13 @@ const GalleryType = ({ typeState, setTypeState }) => {
     reader.readAsDataURL(files[0]);
   };
 
-  const onClickType = type => {
-    setTypeState(type);
-  };
-
   return (
     <>
       <Layout>
-        <TypeLayout typeState={typeState === 'gallery_normal'} onClick={onClickType(typeState)}>
+        <TypeLayout typeState={typeState === 'gallery_normal'} onClick={onChangeType(typeState)}>
           <Icon src="/images/bigType.png" />큰 이미지
         </TypeLayout>
-        <TypeLayout typeState={typeState === 'gallery_grid'} onClick={onClickType(typeState)}>
+        <TypeLayout typeState={typeState === 'gallery_grid'} onClick={onChangeType(typeState)}>
           <Icon src="/images/gridType.png" />
           그리드 이미지
         </TypeLayout>
