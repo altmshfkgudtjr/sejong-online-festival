@@ -27,7 +27,6 @@ const Btns = () => {
           <GoBackButton>뒤로가기</GoBackButton>
         </a>
       </Link>
-      <ShareButton onClick={onClickBtn}>공유하기</ShareButton>
     </Layout>
   );
 };

@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import MainLayout from 'components/layouts';
 import ColumnView from 'components/containers/crew/ColumnView';
 import GridView from 'components/containers/crew/GridView';
+import VideoView from 'components/containers/crew/VideoView';
 import Header from 'components/containers/headers';
 // presenters
 import Banner from 'components/presenters/common/Banner';
@@ -53,8 +54,7 @@ const ExhibitionPage = () => {
       <MainLayout>
         {exhibition.type === 'gallery_normal' && <ColumnView contents={exhibition.contents} />}
         {exhibition.type === 'gallery_grid' && <GridView contents={exhibition.contents} />}
-        {/* TODO 유튜브 전시회 컨테이너 연결 */}
-        {exhibition.type === 'video_youtube' && null}
+        {exhibition.type === 'video_youtube' && <VideoView link={exhibition.contents[0]} />}
         <Btns />
         <Emphasis>
           동아리 응원 문구를 남겨보세요

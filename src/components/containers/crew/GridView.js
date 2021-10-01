@@ -10,11 +10,7 @@ const GridView = ({ contents }) => {
   return (
     <Container>
       {contents.map((content, index) => (
-        <Content
-          src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/${content}`}
-          // onClick={onClickContent(content)}
-          key={index}
-        />
+        <Content src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/${content}`} key={index} />
       ))}
     </Container>
   );
