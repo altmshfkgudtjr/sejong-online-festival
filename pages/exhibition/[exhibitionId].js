@@ -39,15 +39,20 @@ const ExhibitionPage = () => {
     }
 
     dispatch(getCommentList({ contentId: exhibitionId, skip: 0, limit: 10 }));
+    let timer = window.setInterval(
+      () => dispatch(getCommentList({ contentId: exhibitionId, skip: 0, limit: 10 })),
+      3000,
+    );
+    return () => window.clearInterval(timer);
   }, [dispatch, exhibitionId]);
 
   return (
     <>
       <Header />
-      <Banner />
+      <Banner message={exhibition.name} />
       <MainLayout>
-        {exhibition.type === 'gallery_normal' && <ColumnView />}
-        {exhibition.type === 'gallery_grid' && <GridView />}
+        {exhibition.type === 'gallery_normal' && <ColumnView contents={exhibition.contents} />}
+        {exhibition.type === 'gallery_grid' && <GridView contents={exhibition.contents} />}
         {/* TODO 유튜브 전시회 컨테이너 연결 */}
         {exhibition.type === 'video_youtube' && null}
         <Btns />

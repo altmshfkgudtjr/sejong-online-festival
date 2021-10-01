@@ -46,7 +46,10 @@ const Esports = () => {
 };
 
 const Layout = styled(MainLayout)`
-  margin: 200px auto;
+  position: relative;
+  max-width: 100%;
+  margin: 200px auto 140px auto;
+  overflow: hidden;
 `;
 
 const ScrollLayout = styled.div`

@@ -1,17 +1,10 @@
 import styled from 'styled-components';
 
-const ColumnView = () => {
-  const contents = [
-    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainLeft.png`,
-    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainRight.png`,
-    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`,
-    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainLeft.png`,
-  ];
-
+const ColumnView = ({ contents }) => {
   return (
     <>
       {contents.map((content, index) => (
-        <Content src={content} key={index} />
+        <Content src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/${content}`} key={index} />
       ))}
     </>
   );

@@ -17,7 +17,7 @@ const Lineup = () => {
     <MemberCard
       key={idx}
       name={member.name}
-      photo={member.banner_photos}
+      photo={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}${member.banner_photo}`}
       time={member.datetime_info}
       openTime={member.open_time}
       url={member.youtube_link}

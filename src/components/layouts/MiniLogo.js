@@ -13,7 +13,7 @@ function MiniLogo() {
       <a>
         <Image
           className="noselect"
-          src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`}
+          src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/uploads/logo.png`}
           alt=""
         />
       </a>

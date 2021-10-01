@@ -3,21 +3,18 @@ import styled from 'styled-components';
 // hooks
 import useModal from 'hooks/common/useModal';
 
-const GridView = () => {
+const GridView = ({ contents }) => {
   const { initModal } = useModal();
   const onClickContent = content => initModal({ name: 'Preview', args: { src: content } });
-
-  const contents = [
-    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainLeft.png`,
-    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainRight.png`,
-    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`,
-    `${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainLeft.png`,
-  ];
 
   return (
     <Container>
       {contents.map((content, index) => (
-        <Content src={content} onClick={onClickContent(content)} key={index} />
+        <Content
+          src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/${content}`}
+          // onClick={onClickContent(content)}
+          key={index}
+        />
       ))}
     </Container>
   );

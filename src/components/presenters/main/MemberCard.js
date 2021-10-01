@@ -29,24 +29,24 @@ const MemberCard = ({ name, photo, time, openTime, url }) => {
   }, [openTime]);
 
   return (
-    <Wrapper>
+    <Wrapper href={url} target="_blank">
       <Time>{time}</Time>
       <Layout>
         {!isOpen && (
           <Logo
             className="noselect"
-            src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`}
+            src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/uploads/logo.png`}
             alt=""
           />
         )}
+        {isOpen && <Image src={photo} />}
         <ButtonLayout className="noselect" isOpen={isOpen}>
           <PlayButton />
         </ButtonLayout>
-        <ChipLayout isOpen={isOpen} onClick={onClick}>
-          {isOpen && <Image url={photo} />}
-          <Chip message={message} />
-        </ChipLayout>
       </Layout>
+      <ChipLayout isOpen={isOpen} onClick={onClick}>
+        <Chip message={message} />
+      </ChipLayout>
     </Wrapper>
   );
 };
@@ -62,8 +62,10 @@ const PlayButton = () => (
   </svg>
 );
 
-const Wrapper = styled.div`
+const Wrapper = styled.a`
   position: relative;
+  display: block;
+  margin-bottom: 24px;
 
   & ~ & {
     margin-left: 60px;
@@ -77,8 +79,8 @@ const Layout = styled.div`
   min-width: 300px;
   height: 0;
   padding-bottom: 400px;
-  margin-bottom: 24px;
   border-radius: 16px;
+  overflow: hidden;
   background-color: ${palette.background.bg2};
 `;
 
@@ -88,10 +90,12 @@ const Time = styled.div`
   text-align: center;
 `;
 
-const Image = styled.div`
+const Image = styled.img`
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background-image: ${({ url }) => `url(${url}), transparent`};
 `;
 
 const ChipLayout = styled.div`

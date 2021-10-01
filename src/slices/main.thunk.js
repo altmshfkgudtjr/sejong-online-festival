@@ -49,6 +49,6 @@ export const getCommentList = createAsyncThunk(
 );
 
 export const putComment = createAsyncThunk('main/putComment', async ({ contentId, comment }) => {
-  const res = await mainAPI.putComment(contentId, { comment });
+  const res = await mainAPI.putComment(contentId, { comments: comment });
   return res;
 });

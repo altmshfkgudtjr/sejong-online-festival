@@ -20,14 +20,15 @@ const Comments = ({ contentId, commentList = [] }) => {
   const onKeyPress = e => {
     if (e.key === 'Enter') {
       onSend();
+      e.target.value = '';
     }
   };
 
   const CommentList = commentList.map((comment, index) => (
     <CommentLayout key={index}>
-      <UserId>{comment.user_id}</UserId>
-      <Comment>{comment.text}</Comment>
-      <Date>{comment.date}</Date>
+      <UserId>{comment.author_id}</UserId>
+      <Comment>{comment.comment}</Comment>
+      <Date>{comment.created_at.split(' ')[0]}</Date>
     </CommentLayout>
   ));
 
@@ -36,7 +37,7 @@ const Comments = ({ contentId, commentList = [] }) => {
       <InputLayout>
         <Input placeholder="응원하기 메세지를 남겨주세요" ref={ref} onKeyPress={onKeyPress} />
         <Icon
-          src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/ionic-ios-send.png`}
+          src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/uploads/ionic-ios-send.png`}
           onClick={onSend}
         />
       </InputLayout>
@@ -109,7 +110,7 @@ const UserId = styled.span`
 const Comment = styled.div`
   width: fit-content;
   padding: 0 16px;
-  background: ${palette.font.secondary};
+  background: ${palette.font.tertiary};
   color: ${palette.white};
   border-radius: 8px;
   display: flex;

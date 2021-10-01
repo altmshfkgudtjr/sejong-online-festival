@@ -63,5 +63,3 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;
-
-// http://192.168.50.185:5000/uploads/logo.png

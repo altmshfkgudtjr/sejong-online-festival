@@ -12,16 +12,16 @@ const ExhibitionCard = ({ exhibition }) => {
   };
 
   return (
-    <Link href={`/exhibition/${exhibition.id}`} passHref>
+    <Link href={`/exhibition/${exhibition._id}`} passHref>
       <Wrapper>
         <Name>{exhibition.name}</Name>
         <Layout>
           <Logo
             className="noselect"
-            src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`}
+            src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/uploads/logo.png`}
             alt=""
           />
-          <Image url={exhibition.banner_photo} />
+          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}${exhibition.banner_photo}`} />
           <ChipLayout>
             <Chip message={typeMap[exhibition.type]} />
           </ChipLayout>
@@ -58,9 +58,11 @@ const Name = styled.div`
 `;
 
 const Image = styled.img`
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background-image: ${({ url }) => `url(${url}), transparent`};
 `;
 
 const ChipLayout = styled.div`

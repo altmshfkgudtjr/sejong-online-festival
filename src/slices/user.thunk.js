@@ -25,7 +25,7 @@ export const signin = createAsyncThunk('user/signin', async ({ id, pw }, { dispa
   if (!!~res.access_roles.indexOf('general')) {
     window.location.href = '/';
   } else if (!!~res.access_roles.indexOf('exhibition')) {
-    window.location.href = '/manage/crew';
+    window.location.href = '/manage/exhibition';
   }
 });
 

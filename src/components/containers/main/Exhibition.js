@@ -38,7 +38,7 @@ const Exhibition = () => {
       <Title>작품전시 및 동아리</Title>
       <SearchLayout>
         <Input placeholder="동아리명" ref={ref} onKeyUp={onKeyUp} />
-        <SearchIcon src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/ionic-ios-search.png`} />
+        <SearchIcon src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/uploads/ionic-ios-search.png`} />
       </SearchLayout>
       <CardLayout>{ExhibitionList}</CardLayout>
     </Layout>

@@ -20,7 +20,7 @@ const Live = () => {
       <VideoLayout>
         <Logo
           className="noselect"
-          src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/logo.png`}
+          src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/uploads/logo.png`}
           alt=""
         />
         <Video url={getYoutubeThumbnail(live.link)} />

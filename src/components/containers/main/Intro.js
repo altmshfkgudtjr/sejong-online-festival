@@ -8,10 +8,10 @@ const Intro = ({ children }) => {
       <TopContainer>
         {children}
         <LeftImage>
-          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainLeft.png`} />
+          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/uploads/mainLeft.png`} />
         </LeftImage>
         <RightImage>
-          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}uploads/mainRight.png`} />
+          <Image src={`${process.env.NEXT_PUBLIC_IMAGE_PREFIX}/uploads/mainRight.png`} />
         </RightImage>
       </TopContainer>
     </Background>
