@@ -4,9 +4,9 @@ import { createSlice } from '@reduxjs/toolkit';
 	InitialState
 */
 const initialState = {
-  crewList: [],
+  exhibitionList: [],
 
-  currentCrew: {},
+  currentExhibition: {},
 };
 
 /*
@@ -16,16 +16,16 @@ const ExihibitionSlice = createSlice({
   name: 'exhibition',
   initialState,
   reducers: {
-    setCrewList(state, action) {
-      state.crewList = action.payload;
+    setExhibitionList(state, action) {
+      state.exhibitionList = action.payload;
     },
 
-    setCurrentCrew(state, action) {
-      state.currentCrew = action.payload;
+    setCurrentExhibition(state, action) {
+      state.currentExhibition = action.payload;
     },
   },
 });
 
-export const { setCrewList, setCurrentCrew } = ExihibitionSlice.actions;
+export const { setExhibitionList, setCurrentExhibition } = ExihibitionSlice.actions;
 
 export default ExihibitionSlice.reducer;

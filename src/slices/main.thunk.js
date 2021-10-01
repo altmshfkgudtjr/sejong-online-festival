@@ -9,14 +9,32 @@ export const getLineup = createAsyncThunk('main/getLineup', async (_, { dispatch
   return res.celebrities;
 });
 
+export const putLineup = createAsyncThunk('main/putLineup', async (celebrities, { dispatch }) => {
+  dispatch(actions.setLineupList(celebrities));
+  const res = await mainAPI.putLineup({ celebrities });
+  return celebrities;
+});
+
 export const getSchedule = createAsyncThunk('main/getSchedule', async (_, { dispatch }) => {
   const res = await mainAPI.getSchedule();
   dispatch(actions.setScheduleList(res));
   return res;
 });
 
+export const putSchedule = createAsyncThunk('main/putSchedule', async (schedules, { dispatch }) => {
+  dispatch(actions.setScheduleList(schedules));
+  const res = await mainAPI.putSchedule({ schedules });
+  return res;
+});
+
 export const getLive = createAsyncThunk('main/getLive', async (_, { dispatch }) => {
   const res = await mainAPI.getLive();
   dispatch(actions.setLiveVideoList(res));
+  return res;
+});
+
+export const putLive = createAsyncThunk('main/putLive', async (videos, { dispatch }) => {
+  dispatch(actions.setLiveVideoList(videos));
+  const res = await mainAPI.putLive({ videos });
   return res;
 });
