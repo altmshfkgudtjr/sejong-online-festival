@@ -5,7 +5,7 @@ import Chip from 'components/containers/common/Chip';
 // styles
 import { palette, onlyHover } from 'lib/styles';
 // utils
-import { getDateTime, onFormatDate, onFormatTime } from 'lib/utils/time';
+import { getDateTime, onFormatDate } from 'lib/utils/time';
 
 const MemberCard = ({ name, photo, time, openTime, url }) => {
   const [isOpen, setIsOpen] = useState(false);

@@ -6,28 +6,45 @@ import MiniLogo from 'components/layouts/MiniLogo';
 import { palette, zIndex } from 'lib/styles';
 
 const Header = () => {
+  const onClick = id => {
+    const target = document.querySelector(id);
+    document.querySelector('html').scrollTop = target.offsetTop - 100;
+  };
+
   return (
     <HeaderContainer>
       <HeaderLayout>
         <MiniLogo />
         <ItemList>
           <Item>
-            <a href="#schedule">일정</a>
+            <button type="button" onClick={() => onClick('#schedule')}>
+              일정
+            </button>
           </Item>
           <Item>
-            <a href="#live">실시간 라이브</a>
+            <button type="button" onClick={() => onClick('#live')}>
+              실시간 라이브
+            </button>
           </Item>
           <Item>
-            <a href="#lineup">LINE-UP</a>
+            <button type="button" onClick={() => onClick('#lineup')}>
+              LINE-UP
+            </button>
           </Item>
           <Item>
-            <a href="#esports">E-SPROTS</a>
+            <button type="button" onClick={() => onClick('#esports')}>
+              E-SPROTS
+            </button>
           </Item>
           <Item>
-            <a href="#exhibition">동아리</a>
+            <button type="button" onClick={() => onClick('#exhibition')}>
+              동아리
+            </button>
           </Item>
           <Item>
-            <a href="#contact">문의</a>
+            <button type="button" onClick={() => onClick('#contact')}>
+              문의
+            </button>
           </Item>
         </ItemList>
       </HeaderLayout>
@@ -59,7 +76,7 @@ const ItemList = styled.ul`
 `;
 
 const Item = styled.li`
-  & > a {
+  & > button {
     color: ${palette.white};
     font-size: 1rem;
     margin: 14px;

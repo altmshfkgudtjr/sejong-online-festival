@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
 		margin: 0;
 		font-size: 16px;
 		background-color: #0a0511;
+		scroll-behavior: smooth;
 	}
 
 	html {

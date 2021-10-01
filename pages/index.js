@@ -36,6 +36,8 @@ const MainPage = () => {
         <Esports />
       </div>
 
+      <div id="exhibition">{/* <Exihibition /> */}</div>
+
       <div id="contact">
         <Footer />
       </div>

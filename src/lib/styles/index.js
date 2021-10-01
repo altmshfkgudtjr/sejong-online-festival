@@ -38,7 +38,8 @@ export const palette = {
   /* Font Color */
   font: {
     primary: '#3a3a3a',
-    secondary: '#6E6B84',
+    secondary: '#999999',
+    tertiary: '#6E6B84',
   },
 
   /* Backgroud Color */
