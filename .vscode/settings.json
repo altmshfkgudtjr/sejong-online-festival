@@ -1,0 +1,82 @@
+{
+  "explorer.confirmDelete": false,
+  "workbench.iconTheme": "vscode-icons",
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "[python]": {
+    "editor.detectIndentation": true,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  },
+  "[javascript]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.associations": {
+    ".env.development": "env",
+    ".env.production": "env",
+    "*.lock": "yarnlock"
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.insertSpaces": false,
+  "todo-tree.tree.showBadges": true,
+  "todo-tree.general.tags": ["BUG", "FIXME", "TODO", "COMPLETE", "[ ]", "[x]"],
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "tasklist",
+      "iconColour": "#12b886",
+      "foreground": "#fff",
+      "background": "#12b886",
+      "gutterIcon": true
+    },
+    "FIXME": {
+      "icon": "tools",
+      "iconColour": "#ed8f09",
+      "foreground": "#fff",
+      "background": "#ed8f09",
+      "gutterIcon": true
+    },
+    "COMPLETE": {
+      "icon": "verified",
+      "iconColour": "#1c85ed",
+      "foreground": "#fff",
+      "background": "#1c85ed",
+      "gutterIcon": true
+    },
+    "BUG": {
+      "icon": "bug",
+      "iconColour": "#f2340f",
+      "foreground": "#fff",
+      "background": "#f2340f",
+      "gutterIcon": true
+    },
+    "API": {
+      "icon": "server",
+      "iconColour": "#f2c10f",
+      "foreground": "#fff",
+      "background": "#f2c10f",
+      "gutterIcon": true
+    }
+  },
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "editor.detectIndentation": false,
+  "todo-tree.general.enableFileWatcher": true,
+  "window.zoomLevel": -1
+}
