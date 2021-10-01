@@ -31,11 +31,11 @@ const Comments = () => {
         <Input placeholder="응원하기 메세지를 남겨주세요" />
         <Icon src="/images/ionic-ios-send.png" />
       </InputLayout>
-      {comments.map(({ user_id, text, date, index }) => (
+      {comments.map((comment, index) => (
         <CommentLayout key={index}>
-          <UserId>{user_id}</UserId>
-          <Comment>{text}</Comment>
-          <Date>{date}</Date>
+          <UserId>{comment.user_id}</UserId>
+          <Comment>{comment.text}</Comment>
+          <Date>{comment.date}</Date>
         </CommentLayout>
       ))}
     </Layout>
