@@ -3,6 +3,10 @@ import { createWrapper } from 'next-redux-wrapper';
 // reducers
 import modal from 'slices/modal';
 import toast from 'slices/toast';
+import main from 'slices/main';
+import exhibition from 'slices/exhibition';
+import user from 'slices/user';
+import esports from 'slices/esports';
 
 const devMode = process.env.NODE_ENV === 'development';
 
@@ -10,6 +14,10 @@ const devMode = process.env.NODE_ENV === 'development';
 const reducer = combineReducers({
   modal,
   toast,
+  main,
+  exhibition,
+  user,
+  esports,
 });
 
 /* Create Store & Apply Middlewares */
