@@ -1,13 +1,18 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 // styles
 import { palette } from 'lib/styles';
 
 const EsportsCard = ({ id, name, url }) => {
   return (
-    <Layout>
-      <Card url={url} />
-      <Name>{name}</Name>
-    </Layout>
+    <Link href={`/esports/${id}`} passHref>
+      <a>
+        <Layout>
+          <Card url={url} />
+          <Name>{name}</Name>
+        </Layout>
+      </a>
+    </Link>
   );
 };
 

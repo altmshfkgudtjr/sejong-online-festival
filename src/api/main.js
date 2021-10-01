@@ -20,10 +20,3 @@ export const getSchedule = () => {
 export const getLive = () => {
   return request.get('/api/main/live-streaming');
 };
-
-/**
- * 동아리 GET
- */
-export const getCrew = () => {
-  return request.get('/api/main/live-streaming');
-};
