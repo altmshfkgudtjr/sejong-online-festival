@@ -21,48 +21,30 @@ export const palette = {
   white: '#ffffff',
   black: '#000000',
 
+  /* Primary Color */
   primary: 'linear-gradient(to right, #81D0EE, #BAA5FB 25%, #E16DBF 75%, #F86D83);',
 
-  /* Primary Color */
-  red005: '#ffebef',
-  red010: '#ffcdd3',
-  red020: '#f9999a',
-  red030: '#f37073',
-  red040: '#ff4b4e',
-  red050: '#ff3431',
-  red060: '#f62932',
-  red070: '#e41b2b',
-  red080: '#d70e23',
-  red090: '#c80017',
-
   /* Secondary Color */
-  blue005: '#e3f3ff',
-  blue070: '#2277ff',
+  secondary_blue: '#94CBEB',
+  secondary_purple: '#BC9BEA',
+  secondary_pink: '#CD7DC7',
+  secondary_red: '#E37590',
 
-  yellow005: '#fffde5',
-  yellow060: '#ffd912',
-  yellow080: '#fea600',
-
-  gblue005: '#e0f6fa',
-  gblue070: '#0d92a3',
-
-  /* Grey Color */
-  grey005: '#f9f9f9',
-  grey010: '#efefef',
-  grey020: '#e9eaeb',
-  grey030: '#dadbdc',
-  grey040: '#b6b7b8',
-  grey050: '#979899',
-  grey060: '#6e6f70',
-  grey070: '#5b5c5c',
-  grey080: '#3a3a3a',
-  grey090: '#1a1a1a',
+  /* Semantic Color */
+  semantic: {
+    warning: '#FD6BB6',
+  },
 
   /* Font Color */
   font: {
     primary: '#3a3a3a',
-    secondary: '#1a1a1a',
-    tertiary1: '#6e6f70',
+    secondary: '#6E6B84',
+  },
+
+  /* Backgroud Color */
+  background: {
+    bg1: '#0A0511',
+    bg2: '#222036',
   },
 };
 
