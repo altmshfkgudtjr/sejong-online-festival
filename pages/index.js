@@ -5,7 +5,7 @@ import Schedule from 'components/containers/main/Schedule';
 import IntroInfo from 'components/presenters/main/IntroInfo';
 import Banner from 'components/presenters/common/Banner';
 
-export default function MainPage() {
+const MainPage = () => {
   return (
     <>
       <Intro>
@@ -19,4 +19,6 @@ export default function MainPage() {
       <Schedule />
     </>
   );
-}
+};
+
+export default MainPage;

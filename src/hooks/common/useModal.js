@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'hooks/common/useStore';
 import * as domUtils from 'lib/utils/dom';
 // styles
 import * as animations from 'lib/styles/animations';
-import { palette, zIndex } from 'lib/styles';
+import { zIndex } from 'lib/styles';
 /**
  * Modal Hook
  * - Modal이 공유되는 페이지에서 사용하는 훅

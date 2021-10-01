@@ -56,6 +56,11 @@ const nextConfig = {
   async rewrites() {
 		// 다중 API Server에 따른 프록시 설정
 		const proxy = [
+			// 메인 API 서버
+			{
+				source: '/api/:version/:path*',
+        destination: `${process.env.NEXT_PUBLIC_API_SERVER_1}/api/:version/:path*`
+			},
 			// Node API 서버
 			{
 				source: '/next/api/:version/:path*',

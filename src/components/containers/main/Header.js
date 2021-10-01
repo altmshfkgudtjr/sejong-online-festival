@@ -43,7 +43,6 @@ const HeaderContainer = styled.header`
 `;
 
 const HeaderLayout = styled(MainLayout)`
-  width: 1080px;
   display: flex;
   justify-content: space-between;
   align-items: center;

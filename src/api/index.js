@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { getURLParams } from 'lib/utils/router';
 
 /**
  * URL Replace
@@ -12,11 +11,8 @@ const replaceURL = url => {
   let targetURL = url;
 
   if (process.env.NODE_ENV === 'production') {
-    if (url.startsWith('/enfit1/')) {
-      targetURL = url.replace('/enfit1/', `${process.env.NEXT_PUBLIC_API_SERVER_1}/`);
-    }
-    if (url.startsWith('/enfit2/')) {
-      targetURL = url.replace('/enfit2/', `${process.env.NEXT_PUBLIC_API_SERVER_2}/`);
+    if (url.startsWith('/api/')) {
+      targetURL = url.replace('/api/', `${process.env.NEXT_PUBLIC_API_SERVER_1}/`);
     }
     if (url.startsWith('/next/')) {
       targetURL = url.replace('/next/', '/new/');
@@ -30,28 +26,10 @@ const replaceURL = url => {
  * Request 성공 handler
  */
 const requestSuccessHandler = config => {
-  const params = getURLParams(window.location.href);
-
   // 0. URL 설정
   Object.assign(config, { url: replaceURL(config.url) });
 
-  // 1. URL parameter에 token 존재
-  if (params.token) {
-    axios.defaults.headers.common['Authorization'] = `Bearer ${params.token}`;
-  }
-
-  // 2. URL parameter에 hash 존재
-  //    Axios defaults에 hash 존재
-  if (params.hash || axios.defaults.hash) {
-    if (!config.params) {
-      Object.assign(config, { params: {} });
-    }
-    Object.assign(config.params, {
-      hash: params.hash,
-    });
-  }
-
-  // 3. Axios객체 headers에 JWT Token 존재
+  // 1. Axios객체 headers에 JWT Token 존재
   Object.assign(config.headers, axios.defaults.headers.common);
 
   return config;
