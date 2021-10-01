@@ -10,23 +10,23 @@ import { palette } from 'lib/styles';
  *   <strong>강조구문</strong>
  * </Emphasis>
  */
-const Emphahsis = ({ children }) => {
+const Emphasis = ({ children }) => {
   return <Message>{children}</Message>;
 };
 
 const Message = styled.div`
-	text-align: center;
-	color: ${palette.font.secondary};
-	font-size: 36px;
-	font-weight: bold;
-	line-height: 60px;
+  text-align: center;
+  color: ${palette.font.secondary};
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 60px;
 
-	& > strong {
-		color: ${palette.white}
-		font-size: inherit;
-		font-weight: inherit;
-		line-height: inherit;
-	}
+  & > strong {
+    color: ${palette.white};
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
 `;
 
-export default Emphahsis;
+export default Emphasis;
