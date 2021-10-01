@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 // styles
 import { palette } from 'lib/styles';
+// utils
+import { onFormatTime } from 'lib/utils/time';
 
 const ScheduleItem = ({ name, place, startTime, endTime }) => {
-  const onFormatTime = num => (num < 10 ? `0${num}` : `${num}`);
-
-  const start = `${onFormatTime(startTime.getHours())}:${onFormatTime(startTime.getMinutes())}`;
-  const end = `${onFormatTime(endTime.getHours())}:${onFormatTime(endTime.getMinutes())}`;
+  const start = `${onFormatTime(startTime)}`;
+  const end = `${onFormatTime(endTime)}`;
 
   return (
     <Layout>
