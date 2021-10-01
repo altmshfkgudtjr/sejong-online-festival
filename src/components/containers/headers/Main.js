@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MainLayout from 'components/layouts';
 import MiniLogo from 'components/layouts/MiniLogo';
 // styles
-import { palette } from 'lib/styles';
+import { palette, zIndex } from 'lib/styles';
 
 const Header = () => {
   return (
@@ -12,19 +12,22 @@ const Header = () => {
         <MiniLogo />
         <ItemList>
           <Item>
-            <button>일정</button>
+            <a href="#schedule">일정</a>
           </Item>
           <Item>
-            <button>LINE-UP</button>
+            <a href="#live">실시간 라이브</a>
           </Item>
           <Item>
-            <button>E-SPROTS</button>
+            <a href="#lineup">LINE-UP</a>
           </Item>
           <Item>
-            <button>동아리</button>
+            <a href="#esports">E-SPROTS</a>
           </Item>
           <Item>
-            <button>문의</button>
+            <a href="#exhibition">동아리</a>
+          </Item>
+          <Item>
+            <a href="#contact">문의</a>
           </Item>
         </ItemList>
       </HeaderLayout>
@@ -40,6 +43,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   height: 58px;
   background: ${palette.background.bg1};
+  z-index: ${zIndex.header};
 `;
 
 const HeaderLayout = styled(MainLayout)`
@@ -55,7 +59,7 @@ const ItemList = styled.ul`
 `;
 
 const Item = styled.li`
-  & > button {
+  & > a {
     color: ${palette.white};
     font-size: 1rem;
     margin: 14px;

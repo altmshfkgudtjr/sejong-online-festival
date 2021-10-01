@@ -1,14 +1,18 @@
 import styled from 'styled-components';
+import { useEffect } from 'react';
 // components
 import MainLayout from 'components/layouts';
 import ScheduleTitle from 'components/presenters/main/schedule/Title';
 import ScheduleItem from 'components/presenters/main/schedule/Item';
+// slices
+import { getSchedule } from 'slices/main.thunk';
 // hooks
-import { useSelector } from 'hooks/common/useStore';
+import { useSelector, useDispatch } from 'hooks/common/useStore';
 // styles
 import { palette } from 'lib/styles';
 
 const Schedule = () => {
+  const dispatch = useDispatch();
   const scheduleList = useSelector(state => state.main.scheduleList);
 
   const ScheduleList = scheduleList.map((schedule, s_idx) => {
@@ -30,12 +34,16 @@ const Schedule = () => {
     );
   });
 
+  useEffect(() => {
+    dispatch(getSchedule());
+  }, [dispatch]);
+
   return <Layout>{ScheduleList}</Layout>;
 };
 
 const Layout = styled(MainLayout)`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin: 140px auto;
 `;

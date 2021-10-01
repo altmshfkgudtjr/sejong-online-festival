@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Image = styled.img`
-  width: 294px;
-  height: 53px;
+  height: 54px;
   margin: 40px 0;
 `;
 

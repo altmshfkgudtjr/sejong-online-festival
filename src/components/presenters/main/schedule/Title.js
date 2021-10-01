@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { palette } from 'lib/styles';
 
 const ScheduleTitle = ({ message }) => {
-  return <Message>{message}</Message>;
+  return <Message className="noselect">{message}</Message>;
 };
 
 const Message = styled.h2`

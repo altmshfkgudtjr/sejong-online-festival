@@ -4,7 +4,7 @@ import { palette } from 'lib/styles';
 
 const Chip = ({ width = '200px', height = '48px', message }) => {
   return (
-    <Layout width={width} height={height}>
+    <Layout className="noselect" width={width} height={height}>
       {message}
     </Layout>
   );

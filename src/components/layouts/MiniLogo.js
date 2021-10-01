@@ -7,7 +7,7 @@ const Image = styled.img`
 `;
 
 function MiniLogo() {
-  return <Image src="/images/logo.png" alt="" />;
+  return <Image className="noselect" src="/images/logo.png" alt="" />;
 }
 
 export default MiniLogo;
