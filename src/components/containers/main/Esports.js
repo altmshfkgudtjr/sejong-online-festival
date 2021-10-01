@@ -4,21 +4,10 @@ import { useEffect } from 'react';
 import MainLayout from 'components/layouts';
 import Emphahsis from 'components/presenters/common/Emphasis';
 import EsportsCard from 'components/presenters/esports/Card';
-// slices
-import { getLive } from 'slices/main.thunk';
-// hooks
-import { useSelector, useDispatch } from 'hooks/common/useStore';
 // utils
 import { formatToPrice } from 'lib/utils/number';
 
 const Esports = () => {
-  const dispatch = useDispatch();
-  const liveVideoList = useSelector(state => state.main.liveVideoList);
-
-  useEffect(() => {
-    dispatch(getLive());
-  }, [dispatch]);
-
   return (
     <Layout>
       <Emphahsis>

@@ -1,23 +1,26 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 import { palette } from 'lib/styles';
 // containers
 import Chip from 'components/containers/common/Chip';
 
-const CrewCard = ({ crew }) => {
+const ExhibitionCard = ({ exhibition }) => {
   return (
-    <Wrapper>
-      <Name>{crew.name}</Name>
-      <Layout>
-        <Image src={crew.url} />
-        <ChipLayout>
-          <Chip message={crew.type} />
-        </ChipLayout>
-      </Layout>
-    </Wrapper>
+    <Link href={`/exhibition/${exhibition.id}`} passHref>
+      <Wrapper>
+        <Name>{exhibition.name}</Name>
+        <Layout>
+          <Image src={exhibition.banner_photo} />
+          <ChipLayout>
+            <Chip message={exhibition.type} />
+          </ChipLayout>
+        </Layout>
+      </Wrapper>
+    </Link>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.a`
   position: relative;
 `;
 
@@ -56,4 +59,4 @@ const ChipLayout = styled.div`
   cursor: pointer;
 `;
 
-export default CrewCard;
+export default ExhibitionCard;

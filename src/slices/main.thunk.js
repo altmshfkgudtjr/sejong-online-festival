@@ -38,3 +38,17 @@ export const putLive = createAsyncThunk('main/putLive', async (videos, { dispatc
   const res = await mainAPI.putLive({ videos });
   return res;
 });
+
+export const getCommentList = createAsyncThunk(
+  'main/getCommentList',
+  async ({ contentId, skip, limit }, { dispatch }) => {
+    const res = await mainAPI.getCommentList(contentId, skip, limit);
+    dispatch(actions.setCommentList(res));
+    return res;
+  },
+);
+
+export const putComment = createAsyncThunk('main/putComment', async ({ contentId, comment }) => {
+  const res = await mainAPI.putComment(contentId, { comment });
+  return res;
+});

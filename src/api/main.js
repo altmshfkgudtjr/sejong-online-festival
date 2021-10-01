@@ -51,3 +51,23 @@ export const getLive = () => {
 export const putLive = data => {
   return request.put('/api/main/live-streaming', data);
 };
+
+/**
+ * 댓글 PUT
+ * @param {string} contentId
+ * @param {object} data
+ * @param {string} data.comment
+ */
+export const putComment = (contentId, data) => {
+  return request.put(`/api/main/comment/${contentId}`, data);
+};
+
+/**
+ * 댓글 GET
+ * @param {string} contentId Default - 메인 방명록
+ * @param {number} skip
+ * @param {number} limit
+ */
+export const getCommentList = (contentId = '61567c5699926a8b92dafbc4', skip, limit) => {
+  return request.get(`/api/main/comment/${contentId}/${skip}/${limit}`);
+};

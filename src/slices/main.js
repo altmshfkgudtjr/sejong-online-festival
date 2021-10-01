@@ -9,6 +9,8 @@ const initialState = {
   liveVideoList: [],
 
   lineupList: [],
+
+  commentList: [],
 };
 
 /*
@@ -29,9 +31,14 @@ const MainSlice = createSlice({
     setLineupList(state, action) {
       state.lineupList = action.payload;
     },
+
+    setCommentList(state, action) {
+      state.commentList = action.payload;
+    },
   },
 });
 
-export const { setScheduleList, setLiveVideoList, setLineupList } = MainSlice.actions;
+export const { setScheduleList, setLiveVideoList, setLineupList, setCommentList } =
+  MainSlice.actions;
 
 export default MainSlice.reducer;

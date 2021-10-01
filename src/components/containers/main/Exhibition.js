@@ -3,81 +3,81 @@ import { useEffect } from 'react';
 // components
 import MainLayout from 'components/layouts';
 // presenters
-import CrewCard from 'components/presenters/main/CrewCard';
+import ExhibitionCard from 'components/presenters/main/ExhibitionCard';
 // slices
-// import { getCrew } from 'slices/exhibition.thunk';
+import { getExhibitionList } from 'slices/exhibition.thunk';
 // hooks
 import { useSelector, useDispatch } from 'hooks/common/useStore';
 // styles
 import { palette } from 'lib/styles';
 
 const Exhibition = () => {
-  // const dispatch = useDispatch();
-  // const crewList = useSelector(state => state.exhibition.crewList);
+  const dispatch = useDispatch();
+  // const exhibitionList = useSelector(state => state.exhibition.exhibitionList);
 
-  // useEffect(() => {
-  //   dispatch(getCrew());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getExhibitionList());
+  }, [dispatch]);
 
-  const crewList = [
+  const exhibitionList = [
     {
+      id: '1',
       name: '늘헴 코러스',
-      url: '/images/crew1.png',
-      object_id: '1',
+      banner_photo: '/images/crew1.png',
       type: 'Youtube',
     },
     {
+      id: '2',
       name: '더블랙',
-      url: '/images/crew2.png',
-      object_id: '2',
+      banner_photo: '/images/crew2.png',
       type: 'Gallery',
     },
     {
+      id: '3',
       name: '소리더하기',
-      url: '/images/crew3.png',
-      object_id: '3',
+      banner_photo: '/images/crew3.png',
       type: 'Youtube',
     },
     {
+      id: '4',
       name: '페이지7',
-      url: '/images/crew4.png',
-      object_id: '4',
+      banner_photo: '/images/crew4.png',
       type: 'Youtube',
     },
     {
+      id: '5',
       name: '율',
-      url: '/images/crew5.png',
-      object_id: '5',
+      banner_photo: '/images/crew5.png',
       type: 'Gallery',
     },
     {
+      id: '6',
       name: '인터페이스',
-      url: '/images/crew6.png',
-      object_id: '6',
+      banner_photo: '/images/crew6.png',
       type: 'Gallery',
     },
     {
+      id: '7',
       name: '늘헴 코러스',
-      url: '/images/crew1.png',
-      object_id: '7',
+      banner_photo: '/images/crew1.png',
       type: 'Youtube',
     },
     {
+      id: '8',
       name: '늘헴 코러스',
-      url: '/images/crew2.png',
-      object_id: '8',
+      banner_photo: '/images/crew2.png',
       type: 'Youtube',
     },
     {
+      id: '9',
       name: '늘헴 코러스',
-      url: '/images/crew3.png',
-      object_id: '9',
+      banner_photo: '/images/crew3.png',
       type: 'Youtube',
     },
     {
+      id: '10',
       name: '늘헴 코러스',
-      url: '/images/crew4.png',
-      object_id: '10',
+      banner_photo: '/images/crew4.png',
       type: 'Youtube',
     },
   ];
@@ -90,8 +90,8 @@ const Exhibition = () => {
         <SearchIcon src="/images/ionic-ios-search.png" />
       </SearchLayout>
       <CardLayout>
-        {crewList.map((crew, index) => (
-          <CrewCard crew={crew} key={index} />
+        {exhibitionList.map((exhibition, index) => (
+          <ExhibitionCard exhibition={exhibition} key={index} />
         ))}
       </CardLayout>
     </Layout>
