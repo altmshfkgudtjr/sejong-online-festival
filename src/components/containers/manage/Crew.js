@@ -5,19 +5,18 @@ import Demo from 'components/presenters/common/Cropper';
 import GalleryType from 'components/presenters/manage/GalleryType';
 
 const Crew = () => {
-  const [selectState, setSelectState] = useState('youtube');
-  const [typeState, setTypeState] = useState('gallery_normal');
+  const [type, setType] = useState('youtube');
 
   const onChangeSelect = e => {
     const { value } = e.target;
     if (value === 'youtube') {
-      setSelectState('youtube');
+      setType('youtube');
     } else {
-      setSelectState('gallery');
+      setType('gallery_normal');
     }
   };
 
-  const onChangeType = value => setTypeState(value);
+  const onChangeType = value => setType(value);
 
   return (
     <Layout>
@@ -31,10 +30,8 @@ const Crew = () => {
         <option value="youtube">YOUTUBE VIDEO</option>
         <option value="gallery">GALLERY</option>
       </Select>
-      {selectState === 'youtube' && <Input placeholder="YOUTUBE 링크 입력" />}
-      {selectState === 'gallery' && (
-        <GalleryType typeState={typeState} onChangeType={onChangeType} />
-      )}
+      {type === 'youtube' && <Input placeholder="YOUTUBE 링크 입력" />}
+      {type !== 'youtube' && <GalleryType type={type} setType={onChangeType} />}
     </Layout>
   );
 };

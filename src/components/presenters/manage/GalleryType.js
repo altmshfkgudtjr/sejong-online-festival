@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { palette } from 'lib/styles';
 
-const GalleryType = ({ typeState, onChangeType }) => {
+const GalleryType = ({ type, setType }) => {
   const [image, setImage] = useState([]);
 
   const onChange = e => {
@@ -23,10 +23,10 @@ const GalleryType = ({ typeState, onChangeType }) => {
   return (
     <>
       <Layout>
-        <TypeLayout typeState={typeState === 'gallery_normal'} onClick={onChangeType(typeState)}>
+        <TypeLayout typeState={type === 'gallery_normal'} onClick={() => setType('gallery_normal')}>
           <Icon src="/images/bigType.png" />큰 이미지
         </TypeLayout>
-        <TypeLayout typeState={typeState === 'gallery_grid'} onClick={onChangeType(typeState)}>
+        <TypeLayout typeState={type === 'gallery_grid'} onClick={() => setType('gallery_grid')}>
           <Icon src="/images/gridType.png" />
           그리드 이미지
         </TypeLayout>
