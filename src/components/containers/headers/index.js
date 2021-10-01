@@ -12,18 +12,6 @@ const Header = () => {
         <MiniLogo />
         <ItemList>
           <Item>
-            <button>일정</button>
-          </Item>
-          <Item>
-            <button>LINE-UP</button>
-          </Item>
-          <Item>
-            <button>E-SPROTS</button>
-          </Item>
-          <Item>
-            <button>동아리</button>
-          </Item>
-          <Item>
             <button>문의</button>
           </Item>
         </ItemList>
