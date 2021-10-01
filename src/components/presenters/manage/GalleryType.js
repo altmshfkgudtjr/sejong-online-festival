@@ -32,13 +32,26 @@ const GalleryType = ({ type, setType }) => {
         </TypeLayout>
       </Layout>
       <Title>사진 등록</Title>
-      <ImagePreviewLayout>
-        {image && image.map((img, index) => <ImagePreview src={img} key={index} />)}
-      </ImagePreviewLayout>
-      <InputLayout>
-        <Input type="file" id="inputFile" onChange={onChange} />
-        <Description>이 곳을 클릭하여 이미지를 추가해주세요!</Description>
-      </InputLayout>
+      {type === 'gallery_normal' && (
+        <>
+          <ImagePreviewLayout>
+            {image && image.map((img, index) => <ImagePreview src={img} key={index} />)}
+          </ImagePreviewLayout>
+          <InputLayout>
+            <Input type="file" id="inputFile" onChange={onChange} />
+            <Description>이 곳을 클릭하여 이미지를 추가해주세요!</Description>
+          </InputLayout>
+        </>
+      )}
+      {type === 'gallery_grid' && (
+        <ImagePreviewGridLayout>
+          {image && image.map((img, index) => <ImagePreviewGrid src={img} key={index} />)}
+          <InputGridLayout>
+            <Input type="file" id="inputFile" onChange={onChange} />
+            <GridDescription>이 곳을 클릭하여 이미지를 추가해주세요!</GridDescription>
+          </InputGridLayout>
+        </ImagePreviewGridLayout>
+      )}
     </>
   );
 };
@@ -125,6 +138,33 @@ const ImagePreviewLayout = styled.div`
 
 const ImagePreview = styled.img`
   margin-top: 32px;
+`;
+
+const ImagePreviewGridLayout = styled.div`
+  width: 1080px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 180px;
+`;
+
+const InputGridLayout = styled.div`
+  position: relative;
+  border-radius: 8px;
+  min-height: 338px;
+  background: ${palette.background.bg2};
+`;
+
+const GridDescription = styled(Description)`
+  font-size: 15px;
+`;
+
+const ImagePreviewGrid = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  max-height: 338px;
+  max-width: 338px;
 `;
 
 export default GalleryType;
