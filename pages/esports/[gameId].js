@@ -27,10 +27,10 @@ const EsportsPage = () => {
       return;
     }
 
-    dispatch(getCommentList({ contentId: gameId, skip: 0, limit: 10 }));
+    dispatch(getCommentList({ contentId: gameId, skip: 0, limit: 30 }));
     let timer = window.setInterval(
-      () => dispatch(getCommentList({ contentId: gameId, skip: 0, limit: 10 })),
-      3000,
+      () => dispatch(getCommentList({ contentId: gameId, skip: 0, limit: 30 })),
+      500,
     );
     return () => window.clearInterval(timer);
   }, [dispatch, gameId]);

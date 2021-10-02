@@ -39,10 +39,10 @@ const ExhibitionPage = () => {
       return;
     }
 
-    dispatch(getCommentList({ contentId: exhibitionId, skip: 0, limit: 10 }));
+    dispatch(getCommentList({ contentId: exhibitionId, skip: 0, limit: 30 }));
     let timer = window.setInterval(
       () => dispatch(getCommentList({ contentId: exhibitionId, skip: 0, limit: 10 })),
-      3000,
+      500,
     );
     return () => window.clearInterval(timer);
   }, [dispatch, exhibitionId]);
