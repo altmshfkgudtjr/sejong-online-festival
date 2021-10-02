@@ -10,3 +10,6 @@ __세종대학교 온라인 축제 - ONLINE__
   <br /><br />
   <img src="https://user-images.githubusercontent.com/47492535/135700436-46eab051-4784-4b10-8c27-2b8ed7f3d43b.png" width="50%">
 </div>
+
+<br /><br />
+<br /><br />
