@@ -1,6 +1,8 @@
 # SOF(Sejong-Online-Festival) - FE
 __세종대학교 온라인 축제 - ONLINE__
 <br /><br />
+**BE**: [iml1111/sejong-online-festival](https://github.com/iml1111/sejong-online-festival)
+<br /><br />
 <div align=center>
   <strong>#</strong> Next.js &nbsp; &nbsp; <strong>#</strong> Styled-Components &nbsp; &nbsp; <strong>#</strong> @reduxjs/toolkit
   <br /><br />
